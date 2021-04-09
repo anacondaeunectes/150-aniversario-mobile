@@ -24,3 +24,117 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+// Variables con scope global
+:root{
+    --fuente_fira: Fira;
+    --fuente_dulcian: Dulcian;
+    --fuente_minion-Pro: MinionPro;
+}
+
+/* 
+////////////////////////////////
+    IMPORTACIÓN DE FUENTES 
+////////////////////////////////
+
+En caso de querer añadir una fuente nueva, será necesario extraerla en la carpeta assets y usar la declaración "@font-face" para importarla al proyecto
+*/
+
+/* 
+-------------------------
+    Familia Dulcian
+-------------------------
+ ¡OJO¡ - En esta familia de fuentes, cabe diferenciar entre fuentes "Cond" y "Norm". "Cond" parece ser un poco más fina que "Norm"
+*/
+
+@font-face { // Regular
+    font-family: 'Dulcian';
+    src: url("assets/fonts/Dulcian/insigne\ -\ Dulcian\ Cond\ Regular_0.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { // Bold
+    font-family: 'Dulcian';
+    src: url('assets/fonts/Dulcian/insigne\ -\ Dulcian\ Norm\ Bold_0.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face { //Italic regular
+    font-family: 'Dulcian';
+    src: url('assets/fonts/Dulcian/insigne\ -\ Dulcian\ Cond\ Regular\ Italic_0.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/*
+-------------------------
+    Familia Minion Pro
+-------------------------
+*/
+
+@font-face { // Regular
+    font-family: 'MinionPro';
+    src: url("assets/fonts/Minion\ Pro/MinionPro-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { // Bold
+    font-family: 'Fira';
+    src: url('assets/fonts/Minion\ Pro/MinionPro-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face { //Italic regular
+    font-family: 'Fira';
+    src: url('assets/fonts/Minion\ Pro/MinionPro-It.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/*
+-------------------------
+    Familia Fira
+-------------------------
+*/
+
+@font-face { // Regular
+    font-family: 'Fira';
+    src: url('assets/fonts/Fira/FiraSans-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { // Light
+    font-family: 'Fira';
+    src: url('assets/fonts/Fira/FiraSans-Light.ttf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face { // Bold
+    font-family: 'Fira';
+    src: url('assets/fonts/Fira/FiraSans-Bold.ttf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face { //Italic regular
+    font-family: 'Fira';
+    src: url('assets/fonts/Fira/FiraSans-Italic.ttf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+
+// Propiedades globales
+*{
+    font-family: var(--fuente_fira), sans-serif; // Fuente por defecto
+    box-sizing: border-box;
+}
+

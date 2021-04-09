@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CuentaAtrasComponent } from './componentes/cuenta-atras/cuenta-atras.component';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'countdown',
+    component: CuentaAtrasComponent
   },
   {
     path: '',
