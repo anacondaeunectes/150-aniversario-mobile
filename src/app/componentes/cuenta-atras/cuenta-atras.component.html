@@ -1,3 +1,21 @@
-<p>
-  cuenta-atras works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cuenta atrás
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- La propiedad "scrollY" permite, o no, el desplazamiento de la pantalla en el eje vertical -->
+<ion-content [scrollY]="false"> 
+  
+  <div class="countdown__ContenedorGeneral">
+
+    <h1>Quedan...</h1>
+    <h1 id="countdown__tiempoRestante"></h1>
+    <div class="countdown__descripcion">
+      <small>El día <b>5 de Agosto de 2022</b> celebramos el 150 aniversario de las Hijas de María Auxiliadora. ¡Que ganas!</small>
+    </div>
+  </div>
+
+</ion-content>

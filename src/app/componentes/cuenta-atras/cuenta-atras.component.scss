@@ -1,0 +1,35 @@
+// Este id referencia al elemento que contiene la cuenta atrás
+#countdown__tiempoRestante{
+    font-weight: bold;
+    // font-size: 16vw;
+}
+
+// Esta clase contiene el padding para el contenido de la pantalla así como otras propiedades generales para los elementos hijos
+.countdown__ContenedorGeneral{
+    padding: 15vh 20vw;
+    text-align: center;
+}
+
+// Esta clase contiene la descripción conmemorativa
+.countdown__descripcion{
+    margin-top: 30px;
+    padding: 0px 35px;
+    // font-size: 6vw;
+    font-style: italic;
+    text-align: justify; // OJO - Center o justify. Si decidimos center, se podría quitar esta propiedad ya que el contenedor padre ya tiene ese estilo
+}
+
+// En caso de que la orientación del dispositivo sea apaisada (landscape)
+@media screen and (orientation: landscape){
+    
+    // Cambio en la proporción del padding superior con respecto a cuando la orientación del dispositivo sea retrato (portrait).
+    .countdown__PaddingGeneral{
+        padding: 10% 20%;
+    }
+
+    //Cambia el alineado de la descripción inferior a "center".
+    .countdown__descripcion{
+        text-align: center;
+    }
+}
+
