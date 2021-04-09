@@ -1,7 +1,7 @@
 {
   "name": "150-aniversario",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Salesianas España",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -23,6 +23,7 @@
     "@ionic/angular": "^5.5.2",
     "@types/countdown": "0.0.7",
     "countdown": "^2.6.0",
+    "animate.css": "^4.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

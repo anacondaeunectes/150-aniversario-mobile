@@ -1,6 +1,10 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+  
+}
+
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -16,12 +20,54 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+ion-content {
+  --background: url(../../assets/images/background.jpg) ;
+  text-align: center;
+}
+
+#divBotones {
+  background-color: rgba(252, 252, 252, 0.5);;
+  width: 80%; height: 90%;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 10%;
+  border-style: ridge ;
+  border-color: rgb(76, 197, 96);
+  border-width: 4px;
+  border-radius: 20px;
+  
+}
+
+
+
+
+#button1{
+  --animate-delay: 0.5s;
+  
+  height: 80px;
+}
+#button2{
+  --animate-delay: 0.5s;
+  height: 80px;
+  
+}
+#button3{
+  --animate-delay: 0.5s;
+  height: 80px;
+}
+#button4{
+  --animate-delay: 0.5s;
+  height: 80px;
+}
+#button5{
+  --animate-delay: 0.5s;
+  height: 80px;
 }

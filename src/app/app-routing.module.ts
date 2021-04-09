@@ -13,9 +13,19 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'home', //lo he cambiado de home a saludos
     pathMatch: 'full'
   },
+  {
+    path: 'saludos',
+    loadChildren: () => import('./componentes/saludos/saludos.module').then( m => m.SaludosPageModule)
+  },
+  {
+    path: 'image-modal',
+    loadChildren: () => import('./componentes/image-modal/image-modal.module').then( m => m.ImageModalPageModule)
+  },
+
+
 ];
 
 @NgModule({
