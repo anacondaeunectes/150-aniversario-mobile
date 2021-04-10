@@ -6,12 +6,13 @@
   </ion-toolbar>
 </ion-header>-->
 
-<ion-content [fullscreen]="true">
+<!-- INICIO PEDRO
+  <ion-content [fullscreen]="true">
   <div id="divBotones">
     <img class="animate__animated animate__backInDown" src="../../assets/images/headSalesianas.png" />
     <ion-grid>
       <ion-row>
-        <ion-col><!-- AÑADIR ICONOS EN BOTONES + TEXTO -->
+        <ion-col>
           <ion-button class="animate__animated animate__fadeInLeft animate__delay-1s " expand="block" id="button1"
             href="/saludos">SALUDOS</ion-button>
         </ion-col>
@@ -42,4 +43,88 @@
       </ion-row>
     </ion-grid>
   </div>
+</ion-content>-->
+
+<!-- INICIO DANI -->
+<ion-content [fullscreen]="true">
+<div id="divBotones"><ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <h1><ion-icon name="grid" ></ion-icon> MENÚ PRINCIPAL</h1>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button class="animate__animated animate__fadeInLeft animate__delay-1s" expand="block" id="button1"
+        href="/saludos"><div>
+          <ion-icon name="hand-right"></ion-icon><br><label>SALUDOS</label>
+        </div></ion-button>
+    </ion-col>
+    <ion-col>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-2s" expand="block" id="button2"
+        href="/"><div>
+          <ion-icon name="calendar-number"></ion-icon><br><label>PROGRAMACIÓN</label>
+        </div></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-3s" expand="block" id="button3"
+        href="/"><div>
+          <ion-icon name="caret-forward"></ion-icon><br><label>VISITAS</label>
+        </div></ion-button>
+    </ion-col>
+    <ion-col>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-3s" expand="block" id="button4"
+        href="/"><div>
+          <ion-icon name="logo-150aniversario"></ion-icon><br><label>LOGO</label>
+        </div></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-4s" expand="block" id="button5"
+        href="/"><div>
+          <ion-icon name="volume-medium"></ion-icon><br><label>HIMNO</label>
+        </div></ion-button>
+    </ion-col>
+    <ion-col>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-4s" expand="block" id="button6"
+        href="/"><div>
+          <ion-icon name="book"></ion-icon><br><label>HISTORIA</label>
+        </div></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-button class="animate__animated animate__fadeInLeft animate__delay-5s" expand="block" id="button7"
+        href="/">ORACIONES</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid></div>
+
+<ion-fab horizontal="start" vertical="bottom" slot="fixed">
+  <ion-fab-button color="warning">
+    <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="primary">
+      <ion-icon name="logo-youtube"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="primary">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="primary">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="primary">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
 </ion-content>
