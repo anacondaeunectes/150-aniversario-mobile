@@ -26,8 +26,15 @@
 ion-content {
   //--background: url(../../assets/images/fondo.png) ;
   //--background: url(../../assets/images/fondo2.png) ;
-  --background: url(../../assets/images/fondo3.png) ;
+  //--background: url(../../assets/images/fondo3.png) ;
+  --background: url(../../assets/images/fondo4.png) ;
   text-align: center;
+}
+
+#divFrases {
+  background-color: white;
+  text-align: center;
+  //margin-top: 0%;  
 }
 
 #divBotones {
@@ -35,6 +42,11 @@ ion-content {
   text-align: center;
   margin-top: 20%;
   
+}
+
+#logo150 {
+  width: 30%;
+  height: 14%;
 }
 
 #button1{
