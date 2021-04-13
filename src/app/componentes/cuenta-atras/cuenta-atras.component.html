@@ -11,8 +11,9 @@
   
   <div class="countdown__ContenedorGeneral">
 
-    <h1>Quedan...</h1>
+    <h1 class="countdown__titulo">HIJAS MARIA AUXILIADORA</h1>
 
+    <!-- Esta estructura se repite hasta 6 ocasiones ya que cada una contiene una unidad de tiempo (año, mes, día, hora, minuto y segundo). Solo la muestra si es requerido -->
     <div class="countdown__temporizador__bloque">
       <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:0 }}</p>
       <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:1 }}</p>
@@ -24,8 +25,35 @@
       <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:2 }}</p>
       <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:3 }}</p>
     </div>
+
+    <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateo:4"></div>
+
+    <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateo:4">
+      <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:4 }}</p>
+      <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:5 }}</p>
+    </div>
+
+    <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateo:6"></div>
+
+    <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateo:6">
+      <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:6 }}</p>
+      <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:7 }}</p>
+    </div>
+
+    <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateo:8"></div>
+
+    <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateo:8">
+      <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:8 }}</p>
+      <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:9 }}</p>
+    </div>
+
+    <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateo:10"></div>
+
+    <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateo:10">
+      <p class="countdown__temporizador__valor">{{ tiempoRestante | formateo:10 }}</p>
+      <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateo:11 }}</p>
+    </div>
     
-    <!-- <h1 id="countdown__tiempoRestante"></h1> -->
     <div class="countdown__descripcion">
       <small>El día <b>5 de Agosto de 2022</b> celebramos el 150 aniversario de las Hijas de María Auxiliadora. ¡Que ganas!</small>
     </div>

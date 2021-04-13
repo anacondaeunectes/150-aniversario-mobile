@@ -1,7 +1,6 @@
-// Este id referencia al elemento que contiene la cuenta atrás
-#countdown__tiempoRestante{
+.countdown__titulo{
     font-weight: bold;
-    // font-size: 16vw;
+    color: var(--corporativo__naranja);
 }
 
 // Esta clase contiene el padding para el contenido de la pantalla así como otras propiedades generales para los elementos hijos
@@ -19,18 +18,21 @@
     text-align: justify; // OJO - Center o justify. Si decidimos center, se podría quitar esta propiedad ya que el contenedor padre ya tiene ese estilo
 }
 
+//Esta clase agrupa y contiene todo un segmento de la cuenta atrás, tanto el valor como la unidad
 .countdown__temporizador__bloque{
     display: inline-block;
     padding: 15px 10px;
-    margin: 0px 10px;
+    // margin: 0px 10px;
     // background-color: lightblue;
 }
 
+//Separador entre segmentos de la cuenta atrás
 .countdown__temporizador__separador{
     display: inline-block;
     width: 20px;
 }
 
+//Clase que estiliza el valor de los segmentos de la cuenta atrás
 .countdown__temporizador__valor{
     font-weight: bold;
     font-size: xx-large;
@@ -38,6 +40,7 @@
     margin: 0;
 }
 
+//Clase que estiliza la unidad de los segmentos de la cuenta atrás
 .countdown__temporizador__unidad{
     // font-weight: bold;
     color: var(--corporativo__verde);
