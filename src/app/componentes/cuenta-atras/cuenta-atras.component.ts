@@ -8,10 +8,12 @@ import * as countdown from "countdown";
 })
 export class CuentaAtrasComponent implements OnInit {
 
+  tiempoRestante:string = '';
+
   /**
    * Fecha del aniversario. La cuenta atrás gira en torno a esta fecha
    */
-  readonly fechaAniversario:Date = new Date(2022, 8, 4);
+  readonly fechaAniversario:Date = new Date(2021, 4, 11, 19);
 
   /**
    * Número de cifras significativas a mostrar. Ejemplo: (Suponiendo 2 cifras significativas):
@@ -23,13 +25,13 @@ export class CuentaAtrasComponent implements OnInit {
   readonly maxCifras:number = 2;
 
   /**
-   * Labels en español para cambiar la localización del idioma
+   * Labels en español para cambiar la localización del idioma. La coma anterior a cada label es usada como separador para poder maquetar a continuación
    */
   readonly esLabels = {
-    singular: ' milisegundo| segundo| minuto| hora| día| semana| mes| año| década| siglo| milenio',
-    plural: ' milisegundos| segundos| minutos| horas| días| semanas| meses| años| décadas| siglos| milenios',
-    last: ' y ',
-    delim: ', ',
+    singular: ',milisegundo|,segundo|,minuto|,hora|,día|,semana|,mes|,año|,década|,siglo|,milenio',
+    plural: ',milisegundos|,segundos|,minutos|,horas|,días|,semanas|,meses|,años|,décadas|,siglos|,milenios',
+    last: ',',
+    delim: ',',
     empty: 'ahora'
   }
 
@@ -52,7 +54,9 @@ export class CuentaAtrasComponent implements OnInit {
     countdown(
       fecha,
       ts => {
-        document.getElementById('countdown__tiempoRestante').innerHTML = ts.toHTML("span");
+        this.tiempoRestante = ts.toString();
+        // document.getElementById('countdown__tiempoRestante').innerHTML = ts.toHTML("span");
+        // console.log(this.tiempoRestante)
       },
       null,
       maxCifras);

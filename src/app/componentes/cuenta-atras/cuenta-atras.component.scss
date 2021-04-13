@@ -19,6 +19,32 @@
     text-align: justify; // OJO - Center o justify. Si decidimos center, se podría quitar esta propiedad ya que el contenedor padre ya tiene ese estilo
 }
 
+.countdown__temporizador__bloque{
+    display: inline-block;
+    padding: 15px 10px;
+    margin: 0px 10px;
+    // background-color: lightblue;
+}
+
+.countdown__temporizador__separador{
+    display: inline-block;
+    width: 20px;
+}
+
+.countdown__temporizador__valor{
+    font-weight: bold;
+    font-size: xx-large;
+    color: var(--corporativo__azul);
+    margin: 0;
+}
+
+.countdown__temporizador__unidad{
+    // font-weight: bold;
+    color: var(--corporativo__verde);
+    font-size: medium;
+    margin: 0;
+}
+
 // En caso de que la orientación del dispositivo sea apaisada (landscape)
 @media screen and (orientation: landscape){
     
