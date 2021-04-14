@@ -1,5 +1,28 @@
-
 ion-content {
-    --background: url(../../../assets/images/background.jpg) ;
+    --background: url(../../../assets/images/fondo.png) ;
     text-align: center;
-  }
+}
+
+#title {
+  background-color: #3490b0;
+}
+
+ion-card {
+  --background: url(../../../assets/images/fondo4.png) ;
+}
+
+ion-card-subtitle {
+  color:black;
+}
+
+ion-card-title {
+  color:beige;
+}
+
+ion-card-content {
+  color:black;
+}
+
+ion-button {
+  --background: #3490b0;
+}
