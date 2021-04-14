@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ImageModalPage } from '../image-modal/image-modal.page';
 import {Router} from '@angular/router';
+import { StreamingMedia,StreamingVideoOptions } from "@ionic-native/streaming-media/ngx";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class SaludosPage implements OnInit {
   
 
   constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef,
-    public router:Router) { }
+    public router:Router,private streamingMedia:StreamingMedia) { }
 
   ngOnInit() {
   }
@@ -46,6 +47,16 @@ export class SaludosPage implements OnInit {
     modal.present();
   }
 
+  startVideo(){
+    let options:StreamingVideoOptions ={
+      successCallback: () => { console.log('Video played') },
+     errorCallback: (e) => { console.log('Error streaming') },
+     orientation: 'landscape',
+      
+      
+    }
+    this.streamingMedia.playVideo("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4", options);
+  }
   
   
   public saludos = [{
