@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ImageModalPage } from '../image-modal/image-modal.page';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,14 @@ export class SaludosPage implements OnInit {
 
   
 
-  constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef,
+    public router:Router) { }
 
   ngOnInit() {
+  }
+
+  atras(){
+    this.router.navigateByUrl('home');
   }
 
   async openPreview(img) {
@@ -29,8 +35,8 @@ export class SaludosPage implements OnInit {
   }
   
   public saludos = [{
-    subtitle: 'Madre Yvonne',
-    title: 'Saludo de la Madre Yvonne',
+    subtitle: 'Superiora General',
+    title: 'Madre Yvonne',
     content: `
     Queridas Hermanas,
       Aquí, delante de nuestra casa, que es la casa de todas ustedes, y bajo la mirada de María Auxiliadora,
@@ -49,8 +55,8 @@ export class SaludosPage implements OnInit {
     truncating : true
   },
   {
-    subtitle: 'María del Rosario García',
-    title: 'Saludo de María del Rosario García',
+    subtitle: 'Inspectora',
+    title: 'Mª del Rosario García',
     content: `
     Queridas Hermanas,
       Aquí, delante de nuestra casa, que es la casa de todas ustedes, y bajo la mirada de María Auxiliadora,
