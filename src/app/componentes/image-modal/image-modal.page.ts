@@ -8,7 +8,7 @@ import { IonSlides, ModalController } from '@ionic/angular';
 })
 export class ImageModalPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides;
-  
+  video;
   img;
 
  

@@ -23,10 +23,24 @@ export class SaludosPage implements OnInit {
       cssClass: 'transparent-modal',
       componentProps: {
         img
+
       }
     });
     modal.present();
   }
+  async openPreviewVideo(video) {
+    const modal = await this.modalController.create({
+      component: ImageModalPage,
+      cssClass: 'transparent-modal',
+      componentProps: {
+        video
+
+      }
+    });
+    modal.present();
+  }
+
+  
   
   public saludos = [{
     subtitle: 'Madre Yvonne',
@@ -46,6 +60,7 @@ export class SaludosPage implements OnInit {
       en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
     `,
     img: './../../assets/images/madreyvonne.jpg',
+    video:'https://www.youtube.com/watch?v=hzY2LvOipD8',
     truncating : true
   },
   {
