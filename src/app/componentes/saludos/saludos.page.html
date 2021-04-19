@@ -1,32 +1,38 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
     <ion-title id="title">Saludos</ion-title>
-    <ion-icon name="chevron-back-circle" (click)="atras()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+
 
   <ion-card *ngFor="let saludo of saludos">
-    <ion-img src={{saludo.img}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable (click)="openPreview(saludo.img)"></ion-img>
+    <ion-img src={{saludo.img}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
+      (click)="openPreview(saludo.img)"></ion-img>
     <ion-card-header class="animate__animated animate__backInRight">
       <ion-card-subtitle>{{saludo.subtitle}}</ion-card-subtitle>
       <ion-card-title>{{saludo.title}}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content style="text-align: justify;" *ngIf="!saludo.truncating && saludo.content.length > limit" class="animate__animated animate__fadeIn">
-     {{saludo.content}} 
+    <ion-card-content style="text-align: justify;" *ngIf="!saludo.truncating && saludo.content.length > limit"
+      class="animate__animated animate__fadeIn">
+      {{saludo.content}}
     </ion-card-content>
     <ion-card-content style="text-align: right;">
-      <ion-button style="text-transform:none" size="small" (click)="startVideo()" color="danger"
-        *ngIf="saludo.video" class="animate__animated animate__pulse animate__infinite">Video</ion-button>
+      <ion-button style="text-transform:none" size="small" (click)="startVideo()" color="danger" *ngIf="saludo.video"
+        class="animate__animated animate__pulse animate__infinite">Video</ion-button>
       <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = false"
-        *ngIf="saludo.truncating === true" class="animate__animated animate__pulse animate__infinite">Mostrar</ion-button>
-      <ion-button  style="text-transform:none" size="small" (click)="saludo.truncating = true"
+        *ngIf="saludo.truncating === true" class="animate__animated animate__pulse animate__infinite">Mostrar
+      </ion-button>
+      <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = true"
         *ngIf="saludo.truncating === false">Ocultar</ion-button>
     </ion-card-content>
   </ion-card>
 
 </ion-content>
-
