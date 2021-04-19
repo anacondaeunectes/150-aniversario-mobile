@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'image-modal',
     loadChildren: () => import('./componentes/image-modal/image-modal.module').then( m => m.ImageModalPageModule)
+  },  {
+    path: 'programa',
+    loadChildren: () => import('./componentes/programa/programa.module').then( m => m.ProgramaPageModule)
   },
+
 
 
 ];
