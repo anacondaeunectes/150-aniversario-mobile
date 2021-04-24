@@ -4,6 +4,9 @@ import { ImageModalPage } from '../image-modal/image-modal.page';
 import {Router} from '@angular/router';
 import { StreamingMedia,StreamingVideoOptions } from "@ionic-native/streaming-media/ngx";
 
+import { VideoYModalPageModule } from '../video-y-modal/video-y-modal.module'
+import { VideoYModalPage } from '../video-y-modal/video-y-modal.page';
+
 
 @Component({
   selector: 'app-saludos',
@@ -35,9 +38,9 @@ export class SaludosPage implements OnInit {
     });
     modal.present();
   }
-  async openPreviewVideo(video) {
+  async openVideo(video) {
     const modal = await this.modalController.create({
-      component: ImageModalPage,
+      component: VideoYModalPage,
       cssClass: 'transparent-modal',
       componentProps: {
         video
@@ -77,7 +80,7 @@ export class SaludosPage implements OnInit {
       en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
     `,
     img: './../../assets/images/madreyvonne.jpg',
-    video:'https://www.youtube.com/watch?v=hzY2LvOipD8',
+    video:'https://www.youtube.com/embed/t-6-vlLj2l0',
     truncating : true
   },
   {

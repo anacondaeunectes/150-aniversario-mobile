@@ -1,0 +1,20 @@
+.preview-slides {
+    margin-top: 20%;
+    background: #e6e6e6;
+   
+    iframe {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+  }
+  ion-content {
+    --background: transparent;
+}
+ 
+ion-footer {
+    margin-bottom: 10px;
+}
+ 
+ion-slides {
+    height: 100%;
+}
