@@ -14,7 +14,12 @@ const routes: Routes = [
   {
     path: 'programa',
     loadChildren: () => import('./../componentes/programa/programa.module').then( m => m.ProgramaPageModule)
+  },
+  {
+    path:'materiales',
+    loadChildren: () =>import ("./../componentes/materiales/materiales.module").then(m => m.MaterialesPageModule)
   }
+
 
 ];
 

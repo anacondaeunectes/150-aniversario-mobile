@@ -1,0 +1,43 @@
+.collection{
+    @media (max-width: 779px) and (min-width:0px) {
+        column-count: 2;
+    }
+    @media (max-width: 1039px) and (min-width:780px) {
+        column-count: 3;
+    }
+    @media (max-width: 1299px) and (min-width:1040px) {
+        column-count: 4;
+    }
+    @media  (min-width:1300px) {
+        column-count: 5;
+    }
+
+
+}
+
+.collection-item{
+    display: inline-block;
+    padding: 12px 12px 28px 12px;
+    border-radius: 12px;
+    img{
+        border-radius: 12px;
+    }
+}
+
+ion-content {
+    //--background: url(../../assets/images/fondo.png) ;
+    //--background: url(../../assets/images/fondo2.png) ;
+    //--background: url(../../assets/images/fondo3.png) ;
+    --background: url(../../../../../assets/images/fondo4.png) ;
+    text-align: center;
+  }
+
+  #container {
+    background-color: rgba(255, 255, 255, 0.65);
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 12px;
+    
+  }

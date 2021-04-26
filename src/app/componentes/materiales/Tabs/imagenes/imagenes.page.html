@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>imagenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+  <div class="collection ion-padding" >
+    <div class="collection-item" text-center *ngFor="let img of imageList">
+      <img [src]="img.download_url" tappable
+      (click)="openPreview(img.download_url)"/>
+
+    </div>
+    
+  </div>
+</div>
+</ion-content>

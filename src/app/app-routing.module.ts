@@ -33,6 +33,12 @@ const routes: Routes = [
     path: 'video-y-modal',
     loadChildren: () => import('./componentes/video-y-modal/video-y-modal.module').then( m => m.VideoYModalPageModule)
   },
+  {
+    path: 'materiales',
+    loadChildren:()=> import('./componentes/materiales/materiales.module').then(m =>m.MaterialesPageModule)
+  }
+  
+
 
 
 
