@@ -78,20 +78,21 @@
   --ion-color-light-tint: #f5f6f9;
 
   /** Facebook **/
-  --ion-color-facebook: #3b5998;
-  --ion-color-facebook-rgb: 59,89,152;
+  --ion-color-facebook: #3578E5;
+  --ion-color-facebook-rgb: 53,120,229;
   --ion-color-facebook-contrast: #ffffff;
   --ion-color-facebook-contrast-rgb: 255,255,255;
-  --ion-color-facebook-shade: #344e86;
-  --ion-color-facebook-tint: #4f6aa2;
+  --ion-color-facebook-shade: #2f6aca;
+  --ion-color-facebook-tint: #4986e8;
 
   /** Instagram **/
-  --ion-color-instagram: #C13584;
-  --ion-color-instagram-rgb: 193,53,132;
+
+  --ion-color-instagram: radial-gradient(circle at 100% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  --ion-color-instagram-rgb: 225,48,108;
   --ion-color-instagram-contrast: #ffffff;
   --ion-color-instagram-contrast-rgb: 255,255,255;
-  --ion-color-instagram-shade: #aa2f74;
-  --ion-color-instagram-tint: #c74990;
+  --ion-color-instagram-shade: #c62a5f;
+  --ion-color-instagram-tint: #e4457b;
 
   /** Twitter **/
   --ion-color-twitter: #00acee;
