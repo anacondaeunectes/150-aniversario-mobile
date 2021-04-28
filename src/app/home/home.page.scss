@@ -24,10 +24,7 @@
 }
 
 ion-content {
-  //--background: url(../../assets/images/fondo.png) ;
-  //--background: url(../../assets/images/fondo2.png) ;
-  //--background: url(../../assets/images/fondo3.png) ;
-  --background: url(../../assets/images/fondo4.png) ;
+  --background: url(../../assets/Fondos_APP/Trama_color1.png) ;
   text-align: center;
 }
 
@@ -85,18 +82,4 @@ ion-button {
   display: flex;
   flex-flow: column wrap;
   --background: #3490b0;
-}
-
-ion-icon {
-  &[class*=”logo-150aniversario-”] {
-    mask-size: contain;
-    mask-position: 50% 50%;
-    mask-repeat: no-repeat;
-    background: currentColor;
-    width: 1em;
-    height: 1em;
-    }
-  &[class*="logo-150aniversario"] {
-    mask-image: url(../../assets/images/logo-menu.png);
-  }
 }
