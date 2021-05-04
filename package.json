@@ -30,6 +30,7 @@
     "bootstrap": "^4.6.0",
     "cordova-plugin-streaming-media": "^2.3.0",
     "countdown": "^2.6.0",
+    "howler": "^2.2.1",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
