@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home', //lo he cambiado de home a saludos
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -28,7 +28,6 @@ const routes: Routes = [
     path: 'programa',
     loadChildren: () => import('./componentes/programa/programa.module').then( m => m.ProgramaPageModule)
   },
-  
   {
     path: 'video-y-modal',
     loadChildren: () => import('./componentes/video-y-modal/video-y-modal.module').then( m => m.VideoYModalPageModule)
@@ -36,11 +35,14 @@ const routes: Routes = [
   {
     path: 'materiales',
     loadChildren:()=> import('./componentes/materiales/materiales.module').then(m =>m.MaterialesPageModule)
+  },
+  {
+    path:'logos',
+    loadChildren: () =>import ("./componentes/logos/logos.module").then(m => m.LogosPageModule)
+  },  {
+    path: 'agradecimientos',
+    loadChildren: () => import('./componentes/agradecimientos/agradecimientos.module').then( m => m.AgradecimientosPageModule)
   }
-  
-
-
-
 
 ];
 

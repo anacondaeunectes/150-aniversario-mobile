@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path:'materiales',
     loadChildren: () =>import ("./../componentes/materiales/materiales.module").then(m => m.MaterialesPageModule)
+  },
+  {
+    path:'logos',
+    loadChildren: () =>import ("./../componentes/logos/logos.module").then(m => m.LogosPageModule)
+  },
+  {
+    path:'agradecimientos',
+    loadChildren: () =>import ("./../componentes/agradecimientos/agradecimientos.module").then(m => m.AgradecimientosPageModule)
   }
 
 

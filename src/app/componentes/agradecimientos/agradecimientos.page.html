@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>  
+    <ion-title id="title">Agradecimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<br/><br/><br/>
+  <div class="bg-white">
+  <ion-icon color="primary" name="home"></ion-icon>
+        <h2 color="blue">Salesianas de Nervión</h2>
+  </div>
+
+
+  <ion-card *ngFor="let agradecimiento of agradecimientos">
+    <ion-img src={{agradecimiento.img}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn"></ion-img>
+    <ion-card-header class="animate__animated animate__backInRight">
+      <ion-card-title>
+        <ion-icon color="primary" name="home"></ion-icon>
+        <h2 color="blue">Salesianas de Nervión</h2>
+      </ion-card-title>
+      <ion-card-subtitle>{{agradecimiento.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{agradecimiento.title}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+<!-- BOTÓN VOLVER INICIO -->
+<ion-fab horizontal="start" vertical="bottom" slot="fixed">
+  <ion-fab-button href="/home" color="warning">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
