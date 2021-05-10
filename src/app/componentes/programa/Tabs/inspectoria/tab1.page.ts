@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Acto } from "../../../../modelos/acto";
 @Component({
   selector: 'app-tab1',
   templateUrl: './tab1.page.html',
@@ -9,6 +9,7 @@ export class Tab1Page implements OnInit {
 
   constructor() { }
 
+  @Input ()actos:Acto;
   ngOnInit() {
   }
 

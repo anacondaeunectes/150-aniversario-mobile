@@ -1,3 +1,4 @@
 export const environment = {
-  production: false
+  production: false,
+  baseUrl:"http://app150.cmaleon.es/api150/api/"
 };
