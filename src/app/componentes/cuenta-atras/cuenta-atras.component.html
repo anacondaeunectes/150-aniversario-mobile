@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Cuenta atrás
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+
+
+<ion-buttons class="test" slot="start">
+  <ion-back-button  class="test2" defaultHref="/home"></ion-back-button>
+</ion-buttons>
 
 <!-- La propiedad "scrollY" permite, o no, el desplazamiento de la pantalla en el eje vertical -->
-<ion-content [scrollY]="false"> 
+<ion-content [scrollY]="false" class="op"> 
   
   <div class="countdown__ContenedorGeneral">
 
-    <h1 class="countdown__titulo">HIJAS MARIA AUXILIADORA</h1>
+    <!-- <h1 class="countdown__titulo">HIJAS MARIA AUXILIADORA</h1> -->
+
+    <div class="countdown__fechaAniversario">
+      <p class="countdown__fechaAniversario__dia">5</p>
+      <p class="countdown__fechaAniversario__mes">agosto</p>
+      <div class="countdown__fechaAniversario__separador"></div>
+    </div>
 
     <!-- Esta estructura se repite hasta 6 ocasiones ya que cada una contiene una unidad de tiempo (año, mes, día, hora, minuto y segundo). Solo la muestra si es requerido -->
     <div class="countdown__temporizador__bloque">

@@ -3,10 +3,51 @@
     color: var(--corporativo__naranja);
 }
 
+.ff{
+    width: 80%;
+    max-width: 600px;
+    float: right;
+}
+
+.countdown__fechaAniversario{
+    display: inline-block;
+    color: var(--corporativo__naranja);
+}
+
+.countdown__fechaAniversario__dia{
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 0;
+}
+
+.countdown__fechaAniversario__mes{
+    // font-weight: bold;
+    font-size: medium;
+    margin: 0;
+}
+
+.countdown__fechaAniversario__separador{
+    display: inline;
+    color: black;
+    // border-left: 6px solid green;
+    height: 100%;
+    width: 20px;
+}
+
+.test{
+    padding: 10px 10px;
+}
+
+.test2{
+    border-radius: 50px;
+    color: var(--corporativo__azul);
+}
+
 // Esta clase contiene el padding para el contenido de la pantalla así como otras propiedades generales para los elementos hijos
 .countdown__ContenedorGeneral{
     padding: 15vh 20vw;
     text-align: center;
+    height: 100%;
 }
 
 // Esta clase contiene la descripción conmemorativa
