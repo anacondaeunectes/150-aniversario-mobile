@@ -2,6 +2,7 @@ import { hostViewClassName } from '@angular/compiler';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonRange } from '@ionic/angular';
 import {Howl, Howler} from 'howler';
+import {Router} from '@angular/router';
 export interface Track {
   name: string;
   path:string;
@@ -82,9 +83,11 @@ player:Howl = null;
 isPlaying=false;
 progress=0;
 @ViewChild('range',{static:false}) range: IonRange
-  constructor() { }
+  constructor(public router:Router) { }
 
-
+  atras(){
+    this.router.navigateByUrl('home');
+  }
   start(track:Track){
     
     if(this.player){

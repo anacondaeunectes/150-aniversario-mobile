@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon color="danger" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>canciones</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,17 +12,17 @@
 <ion-content>
 <ion-list>
   <ion-item button *ngFor="let track of playlist" (click)="start(track)">
-    <ion-label [color]="track == activeTrack ? 'danger' : 'dark'">
+    <ion-label [color]="track == activeTrack ? 'success' : 'light'">
       {{track.name}}
     </ion-label>
   </ion-item>
 </ion-list>
 </ion-content>
 
-<div *ngIf="activeTrack" style="position: static; margin-bottom: 50px;" class="animate__animated animate__backInUp">
+<div *ngIf="activeTrack" style="position: static; margin-bottom: 50px; background-color: black;"  >
   <ion-toolbar>
     <ion-row>
-      <ion-col size="12" class="ion-text-center">
+      <ion-col size="12" class="ion-text-center" style="color: white;" >
         {{activeTrack.name}}
       </ion-col>
       <ion-col size="12">
@@ -26,19 +31,19 @@
     </ion-row>
     <ion-row>
       <ion-col size="12" class="ion-text-center">
-        <ion-button fill="clear" (click)="prev()" color="dark">
+        <ion-button fill="clear" (click)="prev()" color="light">
           <ion-icon slot="icon-only" name="play-skip-back"></ion-icon>
         </ion-button>
         
-        <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying" color="dark">
+        <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying" color="light">
           <ion-icon slot="icon-only" name="play"></ion-icon>
         </ion-button>
 
-        <ion-button fill="clear" (click)="togglePlayer(true)" *ngIf="isPlaying" color="dark">
+        <ion-button fill="clear" (click)="togglePlayer(true)" *ngIf="isPlaying" color="light">
           <ion-icon slot="icon-only" name="pause"></ion-icon>
         </ion-button>
 
-        <ion-button fill="clear" (click)="next()" color="dark">
+        <ion-button fill="clear" (click)="next()" color="light">
           <ion-icon slot="icon-only" name="play-skip-forward"></ion-icon>
         </ion-button>
       </ion-col>

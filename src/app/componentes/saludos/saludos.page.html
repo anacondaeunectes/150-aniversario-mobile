@@ -26,9 +26,9 @@
     </ion-card-content>
     <ion-card-content style="text-align: right;">
       <ion-button style="text-transform:none" size="small" (click)="openVideo(saludo.video)" color="danger" *ngIf="saludo.video"
-        class="animate__animated animate__pulse animate__infinite">Video</ion-button>
+        class="animate__animated animate__wobble ">Video</ion-button>
       <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = false"
-        *ngIf="saludo.truncating === true" class="animate__animated animate__pulse animate__infinite">Mostrar
+        *ngIf="saludo.truncating === true" class="animate__animated animate__wobble">Mostrar
       </ion-button>
       <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = true"
         *ngIf="saludo.truncating === false">Ocultar</ion-button>

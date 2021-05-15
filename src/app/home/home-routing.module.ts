@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path:'agradecimientos',
     loadChildren: () =>import ("./../componentes/agradecimientos/agradecimientos.module").then(m => m.AgradecimientosPageModule)
+  },
+  {
+    path: 'historia',
+    loadChildren: () => import('./../componentes/historia/historia.module').then( m => m.HistoriaPageModule)
   }
 
 

@@ -35,9 +35,11 @@ ion-content {
 }
 
 #divBotones {
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.507);
   text-align: center;
   margin-top: 20%;
+  
+  
   
 }
 
@@ -47,21 +49,21 @@ ion-content {
 }
 
 #button1{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.1s;
   height: 80px;
   background-color: rgba(252, 252, 252, 0.5);
 }
 #button2{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.2s;
   height: 80px;
   
 }
 #button3{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.6s;
   height: 80px;
 }
 #button4{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.4s;
   height: 80px;
 }
 #button5{
@@ -69,19 +71,19 @@ ion-content {
   height: 80px;
 }
 #button6{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.7s;
   height: 80px;
 }
 #button7{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.3s;
   height: 80px;
 }
 #button8{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.8s;
   height: 80px;
 }
 #button9{
-  --animate-delay: 0.5s;
+  --animate-delay: 0.9s;
   height: 80px;
   --background: url(../../assets/images/oraciones.jpg) ;
 }
@@ -89,6 +91,11 @@ ion-content {
 ion-button {
   display: flex;
   flex-flow: column wrap;
-  --background: #3490b0;
+  --background: linear-gradient(-45deg,#3490b0,#b6bc00,#ee712a  );
+ 
+  
 }
+
+
+
 
