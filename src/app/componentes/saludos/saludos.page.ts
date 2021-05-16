@@ -7,6 +7,8 @@ import { StreamingMedia,StreamingVideoOptions } from "@ionic-native/streaming-me
 import { VideoYModalPageModule } from '../video-y-modal/video-y-modal.module'
 import { VideoYModalPage } from '../video-y-modal/video-y-modal.page';
 
+import { ApiService } from "../../servicios/api.service";
+
 
 @Component({
   selector: 'app-saludos',
@@ -18,9 +20,13 @@ export class SaludosPage implements OnInit {
   
 
   constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef,
-    public router:Router,private streamingMedia:StreamingMedia) { }
+    public router:Router, private streamingMedia:StreamingMedia, private servicioApi: ApiService) { }
 
   ngOnInit() {
+
+    this.servicioApi.getSaludos()
+      .then( res => console.log('Respuesta saludos: ', res))
+      .catch( err => console.log('Error Saludos: ', err));
   }
 
   atras(){
