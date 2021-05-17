@@ -1,5 +1,5 @@
 ion-content {
-    --background: url(../../../assets/images/fondo4.png) ;
+    --background: url(../../../assets/images/fondo.png) ;
     text-align: center;
 }
 
@@ -23,6 +23,15 @@ ion-card-title {
 
 ion-card-content {
   color:black;
+}
+
+.estilo__toolbar{
+  --background: #3490b0;
+}
+
+.botonAtras{
+  border-radius: 50px;
+  color: white;
 }
 
 ion-button {
