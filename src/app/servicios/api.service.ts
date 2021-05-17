@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Acto } from "../modelos/acto";
 import { Saludo } from "../modelos/saludo";
-import { Historia } from '../modelos/historia';
+import { historia } from '../modelos/historia';
 import { environment } from "../../environments/environment";
 import { Observable } from 'rxjs';
 
@@ -43,7 +43,7 @@ export class ApiService {
    */
   async getHistorias(){
 
-    return this.http.get<Historia[]>(this.baseUrl + "story/list.php").toPromise();
+    return this.http.get<historia[]>(this.baseUrl + "story/list.php").toPromise();
   }
   async getHistoria(){
     
