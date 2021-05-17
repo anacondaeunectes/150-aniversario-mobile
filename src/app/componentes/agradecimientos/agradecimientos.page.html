@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<br/><br/><br/>
+<br/>
   <div class="bg-white">
     <h3 class="animate__animated animate__fadeInLeft animate__delay-1s">
       <img src="../../assets/images/agradecimientos/headnervion.png" />
@@ -19,6 +19,7 @@
             </ion-avatar>
             <ion-label>
               <h2><b>{{agradecimientos.name}}</b></h2>
+              <p>{{agradecimientos.dispositivo}}</p>
             </ion-label>
           </ion-item>
     
@@ -28,7 +29,7 @@
   </div>
 
 <!-- BOTÓN VOLVER INICIO -->
-<ion-fab horizontal="start" vertical="bottom" slot="fixed">
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
   <ion-fab-button href="/home" color="warning">
     <ion-icon name="home"></ion-icon>
   </ion-fab-button>
