@@ -43,14 +43,34 @@ export class ApiService {
    */
   async getHistorias(){
 
-    return this.http.get<historia[]>(this.baseUrl + "story/list.php").toPromise();
+    return this.http.get<historia[]>(this.baseUrl + "story/listEverything.php").toPromise();
   }
   async getHistoria(){
     
-    return (await this.http.get<any[]>(this.baseUrl + "story/list.php").toPromise());
+    return (await this.http.get<any[]>(this.baseUrl + "story/listEverything.php").toPromise());
 
     
   }
+  async getMaterialImagenes(){
+    
+    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="1");;
+
+    
+  }
+  async getMaterialCanciones(){
+    
+    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="2");;
+
+    
+  }
+  async getHimnos(){
+    
+    return (await this.http.get<any[]>(this.baseUrl + "hymns/listEverything.php").toPromise());
+
+    
+  }
+
+
 
   
 }

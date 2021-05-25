@@ -3,15 +3,16 @@ ion-content {
     text-align: center;
 }
 
+.estilo__toolbar{
+  --background: #3490b0;
+}
+
 #title {
   background-color: #3490b0;
   color:white;
   
 }
 
-.toolbar{
-  --background: #3490b0;
-}
 
 
 ion-card-subtitle {
@@ -30,3 +31,11 @@ ion-button {
   --background: #3490b0;
 }
 
+.botonAtras{
+  border-radius: 50px;
+  color: white;
+}
+ion-list,ion-item,ion-toolbar,ion-footer{
+  --background: linear-gradient(-45deg,#3490b0,#b6bc00,#ee712a  );
+  --ion-background-color: linear-gradient(-45deg,#3490b0,#b6bc00,#ee712a  );
+}

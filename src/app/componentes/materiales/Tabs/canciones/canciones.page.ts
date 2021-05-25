@@ -86,7 +86,7 @@ progress=0;
   constructor(public router:Router) { }
 
   atras(){
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('home'); 
   }
   start(track:Track){
     

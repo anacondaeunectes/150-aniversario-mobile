@@ -5,8 +5,8 @@
   <div id="container">
   <div class="collection ion-padding" >
     <div class="collection-item" text-center *ngFor="let img of imageList">
-      <img [src]="img.download_url" tappable
-      (click)="openPreview(img.download_url)"/>
+      <img [src]="img.url" tappable
+      (click)="openPreview(img.url)"/>
 
     </div>
     

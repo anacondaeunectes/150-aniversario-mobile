@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ImageModalPage } from '../../../image-modal/image-modal.page';
+import { material } from "../../../../modelos/material"
+import { ApiService } from "../../../../servicios/api.service";
 
 
 @Component({
@@ -12,20 +14,20 @@ import { ImageModalPage } from '../../../image-modal/image-modal.page';
 export class ImagenesPage implements OnInit {
   
 
-  constructor(private http:HttpClient, private modalController: ModalController) { 
-    this.loadImages();
+  constructor(private http:HttpClient, private modalController: ModalController,private servicio:ApiService) { 
+   // this.loadImages();
   }
 
-  imageList = [];
-  nextPage='https://picsum.photos/v2/list?page=1';
+  imageList : material[] ;
+  //nextPage='https://picsum.photos/v2/list?page=1';
 
-  loadImages(){
+  /*loadImages(){
     this.http.get<any[]>(this.nextPage, {observe:'response'}).subscribe(res =>{
       console.log('res:',res);
       this.nextPage=this.parse_link_header(res.headers.get('Link'))['next']
       this.imageList = this.imageList.length ==0 ? res.body : [...this.imageList,...res.body];
     })
-  }
+  }*/
 
   async openPreview(img) {
     const modal = await this.modalController.create({
@@ -39,7 +41,7 @@ export class ImagenesPage implements OnInit {
     modal.present();
   }
 
-  parse_link_header(header) {
+  /*parse_link_header(header) {
     if (header.length == 0) {
       return ;
     }
@@ -68,8 +70,10 @@ export class ImagenesPage implements OnInit {
     {
       img:"https://amymhaddad.s3.amazonaws.com/morocco-blue.png"
     }
-  ]
+  ]*/
   ngOnInit() {
+    this.servicio.getMaterialImagenes().then(data => console.log(this.imageList=data)).catch(error => console.log("hola", error))
+    
   }
 
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
     <ion-buttons slot="start">
       <ion-button (click)="atras()">
         <ion-icon color="danger" name="arrow-back"></ion-icon>
@@ -11,21 +11,28 @@
 
 <ion-content [fullscreen]="true">
   <ion-card *ngFor="let historia of Historia">
-    <ion-img src={{historia.medios.url}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
-      (click)="openPreview(saludo.img)" *ngIf="historia.medios.tipo==image/jpg"></ion-img>
+    <div *ngFor="let item of historia.medios">
+       
+    <ion-img src="{{item.url}}" style="height: 100%; width: 100%;"  tappable
+      (click)="openPreview(item.url)"  ></ion-img>
+    <!--*ngIf="item.tipo==cambiado2"-->
     <ion-card-header class="animate__animated animate__backInRight">
      
       <ion-card-title>{{historia.titulo}}</ion-card-title>
       <ion-card-subtitle>{{historia.subtitulo}}</ion-card-subtitle>
     </ion-card-header>
+    
+     
+    
     <ion-card-content style="text-align: justify;" 
       class="animate__animated animate__fadeIn">
       {{historia.descripcion}}
     </ion-card-content>
   <ion-card-content>
-    <ion-button style="text-transform:none" size="small" (click)="openVideo(historia.medios.url)" color="danger" *ngIf="historia.medios.tipo==video/mp4"
+    <ion-button style="text-transform:none" size="small" (click)="openVideo(item.url)" color="danger" *ngIf="historia.medios.tipo==video/mp4"
         class="animate__animated animate__wobble ">Video</ion-button>
   </ion-card-content>
+  </div>
   </ion-card>
 
 </ion-content>

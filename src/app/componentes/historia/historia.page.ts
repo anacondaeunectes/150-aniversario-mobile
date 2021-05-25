@@ -8,7 +8,7 @@ import { VideoYModalPage } from '../video-y-modal/video-y-modal.page';
 
 @Component({
   selector: 'app-historia',
-  templateUrl: './historia.page.html',
+  templateUrl: './historia.page.html', 
   styleUrls: ['./historia.page.scss'],
 })
 export class HistoriaPage implements OnInit {
@@ -16,9 +16,11 @@ export class HistoriaPage implements OnInit {
   constructor(public router:Router,private modalController: ModalController,private servicio:ApiService) { }
 
   Historia:historia[]
+  id:number
+  titulo:String
 
   ngOnInit() {
-    this.servicio.getHistoria().then(data => this.Historia=data).catch(error => console.log("hola", error))
+    this.servicio.getHistoria().then(data => console.log(this.Historia=data)).catch(error => console.log("hola", error))
   }
   atras(){
     this.router.navigateByUrl('home');

@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'historia',
     loadChildren: () => import('./../componentes/historia/historia.module').then( m => m.HistoriaPageModule)
+  },
+  {
+    path: 'himno',
+    loadChildren: () => import('./../componentes/himno/himno.module').then( m => m.HimnoPageModule)
   }
 
 
