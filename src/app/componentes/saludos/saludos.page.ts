@@ -85,7 +85,7 @@ export class SaludosPage implements OnInit {
       Es un deseo que gustaría que llegue a lo profundo de cada uno. ¿Quién mejor que María nos puede acompañar
       en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
     `,
-    img: './../../assets/images/madreyvonne.jpg',
+    img: './../../assets/images/saludos/madreyvonne.jpg',
     video:'https://www.youtube.com/embed/t-6-vlLj2l0',
     truncating : true
   },
@@ -106,7 +106,7 @@ export class SaludosPage implements OnInit {
       Es un deseo que gustaría que llegue a lo profundo de cada uno. ¿Quién mejor que María nos puede acompañar
       en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
     `,
-    img: './../../assets/images/Chary.jpg',
+    img: './../../assets/images/saludos/chary.jpg',
     truncating : true
   }
   ];
