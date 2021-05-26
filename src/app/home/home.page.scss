@@ -82,39 +82,10 @@ ion-content {
 #button9{
   --animate-delay: 0.9s;
   height: 80px;
-  --background: url(../../assets/images/oraciones.jpg);
+  --background: url(../../assets/images/oraciones.jpg) no-repeat center/cover;
   padding-left: 0 !important;
   padding-right: 0 !important;
   width: 100% !important;
-}
-
-/* Imagen utilizada por defecto, la que se utlizará en pantallas pequeñas
- * Puestas todas las propiedades por separado por motivos ilustrativos
- */
- #button9 {
-  background-color: transparent;
-  --background: url(../../assets/images/oraciones.jpg);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: contain;
-}
-
-/* Ahora podemos cambiar solo la propiedad background-image */
-@media (min-width: 480px) {
-  #button9 {
-    --background: url(../../assets/images/oraciones-480.jpg);
-  }
-}
-@media (min-width: 768px) {
-  #button9 {
-    --background: url(../../assets/images/oraciones-768.jpg);
-  }
-}
-@media (min-width: 1200px) {
-  #button9 {
-    --background: url(../../assets/images/oraciones-1200.jpg);
-  }
 }
 
 ion-button {
