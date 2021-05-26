@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'aviso-legal',
     loadChildren: () => import('./componentes/aviso-legal/aviso-legal.module').then( m => m.AvisoLegalPageModule)
+  },
+  {
+    path: 'oraciones',
+    loadChildren: () => import('./componentes/oraciones/oraciones.module').then( m => m.OracionesPageModule)
   }
 
 ];

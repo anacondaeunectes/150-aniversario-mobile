@@ -20,7 +20,7 @@ export class AgradecimientosPage implements OnInit {
   public agradecimientos_nervion = [{
     name: 'Daniel García Villalba',
     dispositivo: 'Aplicación móvil',
-    img: './../../assets/images/agradecimientos/danielgarcia.jpg',
+    img: './../../assets/images/agradecimientos/danielgarcia.png',
     truncating : true
   },
   {
