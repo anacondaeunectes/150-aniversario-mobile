@@ -1,25 +1,43 @@
 <ion-header>
-  <ion-toolbar>  
+  <ion-toolbar class="estilo__toolbar">     
     <ion-title id="title">Agradecimientos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<br/>
   <div class="bg-white">
     <h3 class="animate__animated animate__fadeInLeft animate__delay-1s">
       <img src="../../assets/images/agradecimientos/headnervion.png" />
     </h3>	
     
       <ion-list>
-        <ion-item *ngFor="let agradecimientos of agradecimientos" >
+        <ion-item *ngFor="let agradecimientos_nervion of agradecimientos_nervion" >
           <ion-item>
             <ion-avatar slot="start">
-              <img src="{{agradecimientos.img}}">
+              <img src="{{agradecimientos_nervion.img}}">
             </ion-avatar>
             <ion-label>
-              <h2><b>{{agradecimientos.name}}</b></h2>
-              <p>{{agradecimientos.dispositivo}}</p>
+              <h2><b>{{agradecimientos_nervion.name}}</b></h2>
+              <p>{{agradecimientos_nervion.dispositivo}}</p>
+            </ion-label>
+          </ion-item>
+    
+        </ion-item>
+      </ion-list>
+
+      <h3 class="animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="../../assets/images/agradecimientos/headleon.png" />
+      </h3>
+
+      <ion-list>
+        <ion-item *ngFor="let agradecimientos_leon of agradecimientos_leon" >
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="{{agradecimientos_leon.img}}">
+            </ion-avatar>
+            <ion-label>
+              <h2><b>{{agradecimientos_leon.name}}</b></h2>
+              <p>{{agradecimientos_leon.dispositivo}}</p>
             </ion-label>
           </ion-item>
     

@@ -17,7 +17,7 @@ export class AgradecimientosPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
-  public agradecimientos = [{
+  public agradecimientos_nervion = [{
     name: 'Daniel García Villalba',
     dispositivo: 'Aplicación móvil',
     img: './../../assets/images/agradecimientos/danielgarcia.jpg',
@@ -44,7 +44,7 @@ export class AgradecimientosPage implements OnInit {
   {
     name: 'Miguel Alcántara Montero',
     dispositivo: 'Panel de administración',
-    img: './../../assets/images/saludos/madreyvonne.jpg',
+    img: './../../assets/images/agradecimientos/miguealcantara.jpg',
     truncating : true
   },
   {
@@ -66,5 +66,26 @@ export class AgradecimientosPage implements OnInit {
     truncating : true
   },
   ];
+
+  public agradecimientos_leon = [
+    {
+    name: 'Gabriel Sánchez Amorín',
+    dispositivo: 'Backend',
+    img: './../../assets/images/agradecimientos/gabileon.png',
+    truncating : true
+  },
+  {
+    name: 'Adrián Blanco Martínez',
+    dispositivo: 'Backend',
+    img: './../../assets/images/agradecimientos/adrianleon.jpg',
+    truncating : true
+  },
+  {
+    name: 'Diego García Ordás',
+    dispositivo: 'Tutor docente',
+    img: './../../assets/images/agradecimientos/diegotutor.png',
+    truncating : true
+  }
+];
 
 }
