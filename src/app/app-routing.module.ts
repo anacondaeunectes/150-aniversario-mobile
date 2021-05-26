@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'himno',
     loadChildren: () => import('./componentes/himno/himno.module').then( m => m.HimnoPageModule)
+  },
+  {
+    path: 'aviso-legal',
+    loadChildren: () => import('./componentes/aviso-legal/aviso-legal.module').then( m => m.AvisoLegalPageModule)
   }
 
 ];
