@@ -26,7 +26,7 @@ export class AgradecimientosPage implements OnInit {
   {
     name: 'Pedro Francisco Arévalo Alcaide',
     dispositivo: 'Aplicación móvil',
-    img: './../../assets/images/saludos/madreyvonne.jpg',
+    img: './../../assets/images/agradecimientos/pedroarevalo.png',
     truncating : true
   },
   {
