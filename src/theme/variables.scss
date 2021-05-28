@@ -137,6 +137,26 @@
   --ion-color-base-rgb: var(--ion-color-youtube-rgb) !important;
 }
 
+/** Salesianas Primary **/
+:root {
+  --ion-color-salesianasprimary: #3490b0;
+  --ion-color-salesianasprimary-rgb: 52,144,176;
+  --ion-color-salesianasprimary-contrast: #ffffff;
+  --ion-color-salesianasprimary-contrast-rgb: 255,255,255;
+  --ion-color-salesianasprimary-shade: #2e7f9b;
+  --ion-color-salesianasprimary-tint: #489bb8;
+}
+
+.ion-color-salesianasprimary {
+  --ion-color-base: var(--ion-color-salesianasprimary);
+  --ion-color-base-rgb: var(--ion-color-salesianasprimary-rgb);
+  --ion-color-contrast: var(--ion-color-salesianasprimary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-salesianasprimary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-salesianasprimary-shade);
+  --ion-color-tint: var(--ion-color-salesianasprimary-tint);
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   /*

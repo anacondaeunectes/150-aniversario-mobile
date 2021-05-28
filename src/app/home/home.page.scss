@@ -38,9 +38,6 @@ ion-content {
   background-color: rgba(255, 255, 255, 0.507);
   text-align: center;
   margin-top: 20%;
-  
-  
-  
 }
 
 #logo150 {
@@ -85,7 +82,10 @@ ion-content {
 #button9{
   --animate-delay: 0.9s;
   height: 80px;
-  --background: url(../../assets/images/oraciones.jpg) ;
+  --background: url(../../assets/images/oraciones.jpg) no-repeat center/cover;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
 }
 
 ion-button {

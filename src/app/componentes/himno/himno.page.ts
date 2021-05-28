@@ -6,6 +6,8 @@ import { IonRange, ModalController } from '@ionic/angular';
 import { ImageModalPage } from '../image-modal/image-modal.page';
 import { VideoYModalPage } from '../video-y-modal/video-y-modal.page';
 import { medio } from 'src/app/modelos/medio';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-himno',
   templateUrl: './himno.page.html',
@@ -19,11 +21,16 @@ export class HimnoPage implements OnInit {
   progress=0; 
   playlist: himno[]
   @ViewChild('range',{static:false}) range: IonRange
-  constructor(private servicio:ApiService,private modalController: ModalController) { }
+  constructor(private servicio:ApiService,private modalController: ModalController, public router:Router) { }
 
 
   ngOnInit() {
     this.servicio.getHimnos().then(data => console.log(this.playlist=data)).catch(error => console.log("hola", error))
+  }
+
+  atras(){
+    this.player.stop();
+    this.router.navigateByUrl('home');
   }
 
   start(himno:himno){

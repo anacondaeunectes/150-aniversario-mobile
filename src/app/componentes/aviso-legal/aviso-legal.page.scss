@@ -1,0 +1,36 @@
+ion-content {
+    --background: url(../../../assets/images/fondo2.png) ;
+    text-align: center;
+}
+
+.estilo__toolbar{
+  --background: #3490b0;
+}
+
+.botonAtras{
+  border-radius: 50px;
+  color: white;
+}
+
+#title {
+  background-color: #3490b0;
+  color:white;
+}
+
+ion-button {
+  --background: #3490b0;
+}
+
+ion-card {
+    background-color: #3490b0;
+    color: white;
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+}
+
+#enlace {
+    color: #bdc31a;
+}

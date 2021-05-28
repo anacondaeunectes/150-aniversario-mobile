@@ -39,7 +39,8 @@ const routes: Routes = [
   {
     path:'logos',
     loadChildren: () =>import ("./componentes/logos/logos.module").then(m => m.LogosPageModule)
-  },  {
+  },
+  {
     path: 'agradecimientos',
     loadChildren: () => import('./componentes/agradecimientos/agradecimientos.module').then( m => m.AgradecimientosPageModule)
   },
@@ -54,6 +55,14 @@ const routes: Routes = [
   {
     path: 'visitas',
     loadChildren: () => import('./componentes/visitas/visitas.module').then( m => m.VisitasPageModule)
+  },
+  {
+    path: 'aviso-legal',
+    loadChildren: () => import('./componentes/aviso-legal/aviso-legal.module').then( m => m.AvisoLegalPageModule)
+  },
+  {
+    path: 'oraciones',
+    loadChildren: () => import('./componentes/oraciones/oraciones.module').then( m => m.OracionesPageModule)
   }
 
 ];

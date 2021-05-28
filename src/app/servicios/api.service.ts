@@ -84,6 +84,12 @@ export class ApiService {
 
     
   }
+  async getOraciones(){
+    
+    return (await this.http.get<any[]>(this.baseUrl + "pray/listEverything.php").toPromise());
+
+  }
+
 
 
   

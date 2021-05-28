@@ -3,14 +3,19 @@ ion-content {
     text-align: center;
 }
 
+.estilo__toolbar{
+  --background: #3490b0;
+}
+
+.botonAtras{
+  border-radius: 50px;
+  color: white;
+}
+
 #title {
   background-color: #3490b0;
   color:white;
 }
-
-//ion-card {
-  //--background: url(../../../assets/images/fondo4.png) ;
-//}
 
 ion-card-subtitle {
   color:white;
