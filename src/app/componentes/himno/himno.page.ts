@@ -36,6 +36,7 @@ export class HimnoPage implements OnInit {
     this.player = new Howl({
       
       src:[url],
+      Html5: true,
       
       onplay:()=>{
         console.log("on play")

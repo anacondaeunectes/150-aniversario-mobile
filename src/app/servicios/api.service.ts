@@ -22,9 +22,17 @@ export class ApiService {
   /**
    * Peticion GET que devuelve una promesa con un array de Actos
    */
-  async getActos(){
+  async getActos1(){
     
-    return (await this.http.get<Acto[]>(this.baseUrl + "acts/list.php").toPromise()).filter(data => data.categoria =="1");
+    return (await this.http.get<Acto[]>(this.baseUrl + "acts/listEverything.php").toPromise()).filter(data => data.categoria =="1");
+  }
+  async getActos2(){
+    
+    return (await this.http.get<Acto[]>(this.baseUrl + "acts/listEverything.php").toPromise()).filter(data => data.categoria =="2");
+  }
+  async getActos3(){
+    
+    return (await this.http.get<Acto[]>(this.baseUrl + "acts/listEverything.php").toPromise()).filter(data => data.categoria =="3");
   }
 
   /**
@@ -70,6 +78,12 @@ export class ApiService {
     
   }
 
+  async getVisitas(){
+    
+    return (await this.http.get<any[]>(this.baseUrl + "visits/listEverything.php").toPromise());
+
+    
+  }
 
 
   

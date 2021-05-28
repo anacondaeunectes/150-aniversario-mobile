@@ -14,7 +14,7 @@ export class ProgramaPage implements OnInit {
   actos:Acto[]
 
   ngOnInit() {
-   this.servicio.getActos().then(data => console.log(data)).catch(error => console.log("hola", error))
+   
     
   }
 

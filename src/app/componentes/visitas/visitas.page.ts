@@ -1,30 +1,30 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { VideoYModalPage } from 'src/app/componentes/video-y-modal/video-y-modal.page';
 import { medio } from 'src/app/modelos/medio';
-import { Acto } from "../../../../modelos/acto";
-import { ApiService } from "../../../../servicios/api.service";
-
+import { visita } from "../../modelos/visita";
+import { ApiService } from "../../servicios/api.service";
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: './tab3.page.html',
-  styleUrls: ['./tab3.page.scss'],
+  selector: 'app-visitas',
+  templateUrl: './visitas.page.html',
+  styleUrls: ['./visitas.page.scss'],
 })
-export class Tab3Page implements OnInit {
+export class VisitasPage implements OnInit {
 
   constructor(private servicio:ApiService,private modalController: ModalController) { }
   
-  Actos:Acto[]
+  Visitas:visita[]
   
   ngOnInit() {
     this.ConseguirDatos()
     //this.Actos.forEach(x => {this.validateFecha(x.fecha)} )
   
   }
-  async openVideo(actos:Acto) {
+  async openVideo(visita:visita) {
     let video
-    actos.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
+    visita.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
     console.log(video)
     const modal = await this.modalController.create({
       component: VideoYModalPage,
@@ -37,20 +37,20 @@ export class Tab3Page implements OnInit {
     modal.present();
   }
 
-  validateVideo(actos:Acto){
-    return actos["medios"].find(x => x.tipo == "video/mp4")
+  validateVideo(visitas:visita){
+    return visitas["medios"].find(x => x.tipo == "video/mp4")
   }
-  validateImagen(actos:Acto){
+  validateImagen(visitas:visita){
     
-    return actos["medios"].find((x => x.tipo == "image/jpg"))
+    return visitas["medios"].find((x => x.tipo == "image/jpg"))
     
 
   }
 
-  findUrl(actos:Acto){
+  findUrl(visitas:visita){
     let url
     
-    return actos["medios"].find(x => x.tipo == "image/jpg").url
+    return visitas["medios"].find(x => x.tipo == "image/jpg").url
   }
 
   
@@ -66,9 +66,8 @@ export class Tab3Page implements OnInit {
   }
 
   ConseguirDatos(){
-    this.servicio.getActos3().then(data => console.log(this.Actos=data)).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
+    this.servicio.getVisitas().then(data => console.log(this.Visitas=data))
   }
-
 
 
 }

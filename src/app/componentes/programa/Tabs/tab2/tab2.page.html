@@ -3,10 +3,39 @@
     <ion-buttons slot="start">
       <ion-back-button text="" class="botonAtras" defaultHref="/home"></ion-back-button>
     </ion-buttons>  
-    <ion-title id="title">Saludos</ion-title>
+    <ion-title id="title">Salesianas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
 
-</ion-content>
+
+  <ion-card *ngFor="let acto of Actos">
+
+    
+    <ion-img src={{findUrl(acto)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
+    (click)="openPreview(saludo.img)" *ngIf="validateImagen(acto)"></ion-img>
+    
+    <ion-card-header class="animate__animated animate__backInRight">
+      <ion-card-title>{{acto.titulo}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: justify;" 
+      class="animate__animated animate__fadeIn">
+      {{acto.descripcion}}
+      {{acto.fecha}}
+    </ion-card-content>
+   
+    <ion-card-content style="text-align: right;">
+      
+      <ion-button style="text-transform:none" size="small" (click)="openVideo(acto)" color="danger" *ngIf="validateVideo(acto)"
+        class="animate__animated animate__wobble ">Video</ion-button>
+      
+      
+     
+    </ion-card-content>
+ 
+  </ion-card>
+
+</ion-content >
+

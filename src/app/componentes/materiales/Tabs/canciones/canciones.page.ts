@@ -87,6 +87,7 @@ progress=0;
 
   atras(){
     this.router.navigateByUrl('home'); 
+    this.player.stop();
   }
   start(track:Track){
     

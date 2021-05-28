@@ -3,32 +3,32 @@
     <ion-buttons slot="start">
       <ion-back-button text="" class="botonAtras" defaultHref="/home"></ion-back-button>
     </ion-buttons>  
-    <ion-title id="title">Eventos</ion-title>
+    <ion-title id="title">Visitas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
 
-  <ion-card *ngFor="let acto of Actos">
+  <ion-card *ngFor="let visita of Visitas">
 
-    <!--src="findUrl(acto)"-->
-    <ion-img src={{findUrl(acto)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
-    (click)="openPreview(saludo.img)" *ngIf="validateImagen(acto)"></ion-img>
+    
+    <ion-img src={{findUrl(visita)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
+    (click)="openPreview(saludo.img)" *ngIf="validateImagen(visita)"></ion-img>
     
     <ion-card-header class="animate__animated animate__backInRight">
-      <ion-card-title>{{acto.titulo}}</ion-card-title>
+      <ion-card-title>{{visita.titulo}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content style="text-align: justify;" 
       class="animate__animated animate__fadeIn">
-      {{acto.descripcion}}
-      {{acto.fecha}}
+      {{visita.descripcion}}
+      
     </ion-card-content>
    
     <ion-card-content style="text-align: right;">
       
-      <ion-button style="text-transform:none" size="small" (click)="openVideo(acto)" color="danger" *ngIf="validateVideo(acto)"
+      <ion-button style="text-transform:none" size="small" (click)="openVideo(visita)" color="danger" *ngIf="validateVideo(visita)"
         class="animate__animated animate__wobble ">Video</ion-button>
       
       
@@ -38,5 +38,4 @@
   </ion-card>
 
 </ion-content >
-
 
