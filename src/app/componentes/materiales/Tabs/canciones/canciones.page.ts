@@ -3,9 +3,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonRange } from '@ionic/angular';
 import {Howl, Howler} from 'howler';
 import {Router} from '@angular/router';
+import { ApiService } from 'src/app/servicios/api.service';
 export interface Track {
-  name: string;
-  path:string;
+  id: string;
+  url:string;
 }
 
 @Component({
@@ -15,75 +16,14 @@ export interface Track {
 })
 export class CancionesPage implements OnInit {
 
-playlist: Track[]=[
-  {
-    name:'Cancion1',
-    path:'https://www.bensound.com/bensound-music/bensound-dubstep.mp3'
-  },
-  {
-    name:'Cancion2',
-    path:'https://www.bensound.com/bensound-music/bensound-betterdays.mp3'
-  },
-  {
-    name:'Cancion3',
-    path:'https://www.bensound.com/bensound-music/bensound-sunny.mp3'
-  },
-  {
-    name:'Cancion1',
-    path:'https://www.bensound.com/bensound-music/bensound-dubstep.mp3'
-  },
-  {
-    name:'Cancion2',
-    path:'https://www.bensound.com/bensound-music/bensound-betterdays.mp3'
-  },
-  {
-    name:'Cancion3',
-    path:'https://www.bensound.com/bensound-music/bensound-sunny.mp3'
-  },
-  {
-    name:'Cancion1',
-    path:'https://www.bensound.com/bensound-music/bensound-dubstep.mp3'
-  },
-  {
-    name:'Cancion2',
-    path:'https://www.bensound.com/bensound-music/bensound-betterdays.mp3'
-  },
-  {
-    name:'Cancion3',
-    path:'https://www.bensound.com/bensound-music/bensound-sunny.mp3'
-  },
-  {
-    name:'Cancion1',
-    path:'https://www.bensound.com/bensound-music/bensound-dubstep.mp3'
-  },
-  {
-    name:'Cancion2',
-    path:'https://www.bensound.com/bensound-music/bensound-betterdays.mp3'
-  },
-  {
-    name:'Cancion3',
-    path:'https://www.bensound.com/bensound-music/bensound-sunny.mp3'
-  },
-  {
-    name:'Cancion1',
-    path:'https://www.bensound.com/bensound-music/bensound-dubstep.mp3'
-  },
-  {
-    name:'Cancion2',
-    path:'https://www.bensound.com/bensound-music/bensound-betterdays.mp3'
-  },
-  {
-    name:'Cancion3',
-    path:'https://www.bensound.com/bensound-music/bensound-sunny.mp3'
-  }
-]
+playlist: Track[]
 
 activeTrack:Track =null;
 player:Howl = null;
 isPlaying=false;
 progress=0;
 @ViewChild('range',{static:false}) range: IonRange
-  constructor(public router:Router) { }
+  constructor(public router:Router,private servicio:ApiService) { }
 
   atras(){
     this.router.navigateByUrl('home'); 
@@ -95,7 +35,7 @@ progress=0;
       this.player.stop();
     }
     this.player = new Howl({
-      src:[track.path],
+      src:[track.url],
       
       onplay:()=>{
         console.log("on play")
@@ -107,7 +47,7 @@ progress=0;
         console.log("on end")
       }
     });
-    console.log(track.path)
+    console.log(track.url)
     this.player.play();
   }
   togglePlayer(pause){
@@ -152,6 +92,7 @@ progress=0;
     }
   
   ngOnInit() {
+    this.servicio.getMaterialCanciones().then(data => this.playlist=data)
   }
 
 }

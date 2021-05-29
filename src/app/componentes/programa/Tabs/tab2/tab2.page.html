@@ -20,16 +20,22 @@
       <ion-card-title>{{acto.titulo}}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content style="text-align: justify;" 
+    <ion-card-content style="text-align: justify;" *ngIf="!acto.truncating && acto.descripcion.length > limit"
       class="animate__animated animate__fadeIn">
-      {{acto.descripcion}}
-      {{acto.fecha}}
+      {{acto.descripcion}}<br>
+      FECHA: {{acto.fecha}}
     </ion-card-content>
    
     <ion-card-content style="text-align: right;">
       
       <ion-button style="text-transform:none" size="small" (click)="openVideo(acto)" color="danger" *ngIf="validateVideo(acto)"
         class="animate__animated animate__wobble ">Video</ion-button>
+
+        <ion-button style="text-transform:none" size="small" (click)="acto.truncating = false"
+        *ngIf="acto.truncating === true" class="animate__animated animate__wobble">Mostrar
+      </ion-button>
+      <ion-button style="text-transform:none" size="small" (click)="acto.truncating = true"
+        *ngIf="acto.truncating === false">Ocultar</ion-button>
       
       
      

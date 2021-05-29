@@ -11,19 +11,19 @@
 
 
   <ion-card *ngFor="let saludo of saludos">
-    <ion-img src={{saludo.img}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
+    <ion-img src={{findUrl(saludo)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
       (click)="openPreview(saludo.img)"></ion-img>
     <ion-card-header class="animate__animated animate__backInRight">
-      <ion-card-subtitle>{{saludo.subtitle}}</ion-card-subtitle>
-      <ion-card-title>{{saludo.title}}</ion-card-title>
+      <ion-card-subtitle>{{saludo.descripcion}}</ion-card-subtitle>
+      <ion-card-title>{{saludo.titulo}}</ion-card-title> 
     </ion-card-header>
 
-    <ion-card-content style="text-align: justify;" *ngIf="!saludo.truncating && saludo.content.length > limit"
+    <ion-card-content style="text-align: justify;" *ngIf="!saludo.truncating && saludo.texto.length > limit"
       class="animate__animated animate__fadeIn">
-      {{saludo.content}}
+      {{saludo.texto}}
     </ion-card-content>
     <ion-card-content style="text-align: right;">
-      <ion-button style="text-transform:none" size="small" (click)="openVideo(saludo.video)" color="danger" *ngIf="saludo.video"
+      <ion-button style="text-transform:none" size="small" (click)="openVideo(saludo)" color="danger" *ngIf="validateVideo(saludo)"
         class="animate__animated animate__wobble ">Video</ion-button>
       <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = false"
         *ngIf="saludo.truncating === true" class="animate__animated animate__wobble">Mostrar

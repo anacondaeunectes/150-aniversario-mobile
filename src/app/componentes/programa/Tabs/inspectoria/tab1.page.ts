@@ -52,7 +52,7 @@ export class Tab1Page implements OnInit {
   }
 
   ConseguirDatos(){
-    this.servicio.getActos1().then(data => console.log(this.Actos=data)).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
+    this.servicio.getActos1().then(data => {data.forEach(x => x.truncating=true); this.Actos=data}).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
   }
 
   findUrl(actos:Acto){
@@ -61,5 +61,6 @@ export class Tab1Page implements OnInit {
     return actos["medios"].find(x => x.tipo == "image/jpg").url
   }
 
+  public limit: number = 1;
 
 }
