@@ -66,9 +66,9 @@ export class Tab3Page implements OnInit {
   }
 
   ConseguirDatos(){
-    this.servicio.getActos3().then(data => console.log(this.Actos=data)).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
+    this.servicio.getActos3().then(data => {data.forEach(x => x.truncating=true); this.Actos=data}).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
   }
 
-
+  public limit: number = 1;
 
 }

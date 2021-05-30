@@ -10,6 +10,7 @@ export class Acto {
     fecha:any;
     enUso: string;
     categoria: string;
-    medios:medio[]
+    medios:medio[];
+    truncating : boolean = true;
 }
 

@@ -5,6 +5,7 @@ import { Saludo } from "../modelos/saludo";
 import { historia } from '../modelos/historia';
 import { environment } from "../../environments/environment";
 import { Observable } from 'rxjs';
+import { visita } from '../modelos/visita';
 
 
 @Injectable({
@@ -41,7 +42,7 @@ export class ApiService {
    */
   async getSaludos(){
 
-    return this.http.get<Saludo[]>(this.baseUrl + "greetings/list.php").toPromise();
+    return this.http.get<Saludo[]>(this.baseUrl + "greetings/listEverything.php").toPromise();
   }
 
 
@@ -61,13 +62,13 @@ export class ApiService {
   }
   async getMaterialImagenes(){
     
-    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="1");;
+    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="1");
 
     
   }
   async getMaterialCanciones(){
     
-    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="2");;
+    return (await this.http.get<any[]>(this.baseUrl + "materials/list.php").toPromise()).filter(data => data.tipo =="3");
 
     
   }
@@ -80,7 +81,7 @@ export class ApiService {
 
   async getVisitas(){
     
-    return (await this.http.get<any[]>(this.baseUrl + "visits/listEverything.php").toPromise());
+    return (await this.http.get<visita[]>(this.baseUrl + "visits/listEverything.php").toPromise());
 
     
   }
@@ -89,6 +90,7 @@ export class ApiService {
     return (await this.http.get<any[]>(this.baseUrl + "pray/listEverything.php").toPromise());
 
   }
+
 
 
 

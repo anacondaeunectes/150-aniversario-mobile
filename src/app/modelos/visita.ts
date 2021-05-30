@@ -4,5 +4,6 @@ export class visita {
     id : number;
     titulo: string;
     descripcion : string;
-    medios: medio[]
+    medios: medio[];
+    truncating : boolean = true;
 }

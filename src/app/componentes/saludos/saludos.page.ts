@@ -8,6 +8,7 @@ import { VideoYModalPageModule } from '../video-y-modal/video-y-modal.module'
 import { VideoYModalPage } from '../video-y-modal/video-y-modal.page';
 
 import { ApiService } from "../../servicios/api.service";
+import { Saludo } from 'src/app/modelos/saludo';
 
 
 @Component({
@@ -17,6 +18,7 @@ import { ApiService } from "../../servicios/api.service";
 })
 export class SaludosPage implements OnInit {
 
+  public saludos = [];
   
 
   constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef,
@@ -24,9 +26,7 @@ export class SaludosPage implements OnInit {
 
   ngOnInit() {
 
-    this.servicioApi.getSaludos()
-      .then( res => console.log('Respuesta saludos: ', res))
-      .catch( err => console.log('Error Saludos: ', err));
+    this.servicioApi.getSaludos().then(data => {data.forEach(x => x.truncating=true); this.saludos=data})
   }
 
   atras(){
@@ -44,17 +44,7 @@ export class SaludosPage implements OnInit {
     });
     modal.present();
   }
-  async openVideo(video) {
-    const modal = await this.modalController.create({
-      component: VideoYModalPage,
-      cssClass: 'transparent-modal',
-      componentProps: {
-        video
-
-      }
-    });
-    modal.present();
-  }
+ 
 
   startVideo(){
     let options:StreamingVideoOptions ={
@@ -66,51 +56,41 @@ export class SaludosPage implements OnInit {
     }
     this.streamingMedia.playVideo("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4", options);
   }
-  
-  
-  public saludos = [{
-    subtitle: 'Superiora General',
-    title: 'Madre Yvonne',
-    content: `
-    Queridas Hermanas,
-      Aquí, delante de nuestra casa, que es la casa de todas ustedes, y bajo la mirada de María Auxiliadora,
-      quiero llegar a todas las partes del mundo para desearles una Santa Navidad y un Feliz Año 2017.
-      De esta casa, que es la casa de todas las Hijas de María Auxiliadora, también de todos los jóvenes,
-      los laicos, las familias que encontramos en los varios países del mundo en los cuales estamos presentes,
-      quiero llegar a cada comunidad, a cada casa, a cada una y uno de vosotros en este momento particular de
-      alegría en la preparación de la Navidad. Quiero confiar a María, nuestra Madre y Auxiliadora, la misión
-      de entrar en sus casas, de estar cerca de cada una y de cada uno para expresarles mis sentimientos de
-      alegría y de esperanza que quisiera fueran compartidos con todos. María no tiene problemas para moverse
-      de un lado a otro, por lo tanto será Ella mi mensajera para desearles una Navidad de alegría y de esperanza.
-      Es un deseo que gustaría que llegue a lo profundo de cada uno. ¿Quién mejor que María nos puede acompañar
-      en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
-    `,
-    img: './../../assets/images/saludos/madreyvonne.jpg',
-    video:'https://www.youtube.com/embed/t-6-vlLj2l0',
-    truncating : true
-  },
-  {
-    subtitle: 'Inspectora',
-    title: 'Mª del Rosario García',
-    content: `
-    Queridas Hermanas,
-      Aquí, delante de nuestra casa, que es la casa de todas ustedes, y bajo la mirada de María Auxiliadora,
-      quiero llegar a todas las partes del mundo para desearles una Santa Navidad y un Feliz Año 2017.
-      De esta casa, que es la casa de todas las Hijas de María Auxiliadora, también de todos los jóvenes,
-      los laicos, las familias que encontramos en los varios países del mundo en los cuales estamos presentes,
-      quiero llegar a cada comunidad, a cada casa, a cada una y uno de vosotros en este momento particular de
-      alegría en la preparación de la Navidad. Quiero confiar a María, nuestra Madre y Auxiliadora, la misión
-      de entrar en sus casas, de estar cerca de cada una y de cada uno para expresarles mis sentimientos de
-      alegría y de esperanza que quisiera fueran compartidos con todos. María no tiene problemas para moverse
-      de un lado a otro, por lo tanto será Ella mi mensajera para desearles una Navidad de alegría y de esperanza.
-      Es un deseo que gustaría que llegue a lo profundo de cada uno. ¿Quién mejor que María nos puede acompañar
-      en esta espera para acoger a Jesús con un corazón de alegría y esperanza?
-    `,
-    img: './../../assets/images/saludos/chary.jpg',
-    truncating : true
+
+  findUrl(saludo:Saludo){
+    let url
+    
+    return saludo["medios"].find(x => x.tipo == "image/jpg").url
   }
-  ];
+
+  async openVideo(saludo:Saludo) {
+    let video
+    saludo.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
+    console.log(video)
+    const modal = await this.modalController.create({
+      component: VideoYModalPage,
+      cssClass: 'transparent-modal',
+      componentProps: {
+        video
+
+      }
+    });
+    modal.present();
+  }
+
+  validateVideo(saludo:Saludo){
+    return saludo["medios"].find(x => x.tipo == "video/mp4")
+  }
+  validateImagen(saludo:Saludo){
+    
+    return saludo["medios"].find((x => x.tipo == "image/jpg"))
+    
+
+  }
+  
+  
+
 
   // Show more/less
-  public limit: number = 40;
+  public limit: number = 1;
 }

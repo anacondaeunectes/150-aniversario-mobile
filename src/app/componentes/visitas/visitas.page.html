@@ -14,15 +14,16 @@
 
     
     <ion-img src={{findUrl(visita)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
-    (click)="openPreview(saludo.img)" *ngIf="validateImagen(visita)"></ion-img>
+    (click)="openPreview(visita.img)" *ngIf="validateImagen(visita)"></ion-img>
     
     <ion-card-header class="animate__animated animate__backInRight">
       <ion-card-title>{{visita.titulo}}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content style="text-align: justify;" 
+    <ion-card-content style="text-align: justify;" *ngIf="!visita.truncating && visita.descripcion.length > limit"
       class="animate__animated animate__fadeIn">
       {{visita.descripcion}}
+      
       
     </ion-card-content>
    
@@ -30,7 +31,11 @@
       
       <ion-button style="text-transform:none" size="small" (click)="openVideo(visita)" color="danger" *ngIf="validateVideo(visita)"
         class="animate__animated animate__wobble ">Video</ion-button>
-      
+        <ion-button style="text-transform:none" size="small" (click)="visita.truncating = false"
+        *ngIf="visita.truncating === true" class="animate__animated animate__wobble">Mostrar
+      </ion-button>
+      <ion-button style="text-transform:none" size="small" (click)="visita.truncating = true"
+        *ngIf="visita.truncating === false">Ocultar</ion-button>
       
      
     </ion-card-content>

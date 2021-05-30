@@ -13,6 +13,7 @@ import { ApiService } from "../../servicios/api.service";
 })
 export class VisitasPage implements OnInit {
 
+  public limit: number = 1;
   constructor(private servicio:ApiService,private modalController: ModalController) { }
   
   Visitas:visita[]
@@ -66,7 +67,7 @@ export class VisitasPage implements OnInit {
   }
 
   ConseguirDatos(){
-    this.servicio.getVisitas().then(data => console.log(this.Visitas=data))
+    this.servicio.getVisitas().then(data => {data.forEach(x => x.truncating=true); this.Visitas=data})
   }
 
 
