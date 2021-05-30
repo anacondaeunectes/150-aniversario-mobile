@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CuentaAtrasComponent } from './componentes/cuenta-atras/cuenta-atras.component';
+import { SplashscreenComponent } from './componentes/splashscreen/splashscreen.component';
+import { CuentaAtrasComponent } from "./componentes/cuenta-atras/cuenta-atras.component";
 
 const routes: Routes = [
   {
@@ -8,12 +9,12 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'countdown',
-    component: CuentaAtrasComponent
+    path: 'splashscreen',
+    component: SplashscreenComponent
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'splashscreen',
     pathMatch: 'full'
   },
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'oraciones',
     loadChildren: () => import('./componentes/oraciones/oraciones.module').then( m => m.OracionesPageModule)
+  },
+  {
+    path: 'vocacional',
+    loadChildren: () => import('./componentes/vocacional/vocacional.module').then( m => m.VocacionalPageModule)
   }
 
 ];

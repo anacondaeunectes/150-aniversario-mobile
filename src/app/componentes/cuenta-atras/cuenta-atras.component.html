@@ -1,21 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cuenta atrás
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="countdown__ContenedorGeneral">
 
-<!-- La propiedad "scrollY" permite, o no, el desplazamiento de la pantalla en el eje vertical -->
-<ion-content [scrollY]="false"> 
-  
-  <div class="countdown__ContenedorGeneral">
+  <!-- <h1 class="countdown__titulo">HIJAS MARIA AUXILIADORA</h1> -->
 
-    <h1>Quedan...</h1>
-    <h1 id="countdown__tiempoRestante"></h1>
-    <div class="countdown__descripcion">
-      <small>El día <b>5 de Agosto de 2022</b> celebramos el 150 aniversario de las Hijas de María Auxiliadora. ¡Que ganas!</small>
-    </div>
+  <!-- <div class="countdown__fechaAniversario">
+    <p class="countdown__fechaAniversario__dia">5</p>
+    <p class="countdown__fechaAniversario__mes">agosto</p>
+    <div class="countdown__fechaAniversario__separador"></div>
+  </div> -->
+
+  <!-- Esta estructura se repite hasta 6 ocasiones ya que cada una contiene una unidad de tiempo (año, mes, día, hora, minuto y segundo). Solo la muestra si es requerido -->
+  <div class="countdown__temporizador__bloque">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:0 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:1 }}</p>
   </div>
 
-</ion-content>
+  <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateoCD:2"></div>
+
+  <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateoCD:2">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:2 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:3 }}</p>
+  </div>
+
+  <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateoCD:4"></div>
+
+  <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateoCD:4">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:4 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:5 }}</p>
+  </div>
+
+  <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateoCD:6"></div>
+
+  <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateoCD:6">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:6 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:7 }}</p>
+  </div>
+
+  <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateoCD:8"></div>
+
+  <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateoCD:8">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:8 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:9 }}</p>
+  </div>
+
+  <div class="countdown__temporizador__separador" *ngIf="tiempoRestante | formateoCD:10"></div>
+
+  <div class="countdown__temporizador__bloque" *ngIf="tiempoRestante | formateoCD:10">
+    <p class="countdown__temporizador__valor">{{ tiempoRestante | formateoCD:10 }}</p>
+    <p class="countdown__temporizador__unidad">{{ tiempoRestante | formateoCD:11 }}</p>
+  </div>
+
+</div>

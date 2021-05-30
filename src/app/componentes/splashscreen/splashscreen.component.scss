@@ -1,0 +1,175 @@
+#custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width:100%;
+  }
+  
+  .bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 100%;
+    flex-direction: column;
+    // animation: go_up 2.5s ease-in-out forwards;
+  }
+
+  app-cuenta-atras{
+    margin-top: 15px;
+  }
+  
+  @keyframes go_up{
+    0%{
+      transform: translateY(0px);
+    }
+    100%{
+      transform: translateY(-20vh);
+    }
+  }
+
+  .txt{
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .bottom_logo{
+    display: block;
+    position: fixed;
+  
+    bottom: 50px;
+
+    // border-top: 1px solid gray;
+    // border-bottom: 1px solid gray;
+  }
+
+  .bottom_logo p{
+    text-align: center;
+    color: black;
+    font-size: large;
+    margin-bottom: 5px;
+  }
+  
+  .bottom_logo img{
+    width: 80vw;
+    max-width: 50vh;
+  }
+
+  .separador_top{
+    border-top: 1px solid gray;
+  }
+
+  .separador_bottom{
+    border-bottom: 1px solid gray;
+  }
+  
+  #container_container{
+    width: 72vw;
+    height: 72vw;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: inset 0px 0px 15px rgba(0,0,0,0.26), 0px 0px 18px rgba(0,0,0,0.12);
+  
+    animation: pulso 5s linear infinite forwards;
+    // animation: sombra_circulo 6s linear infinite forwards;
+  
+  }
+  
+  .mask_container{
+    width: 60vw;
+    height: 60vw;
+    background: white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.26), 0px 0px 18px rgba(0,0,0,0.12);
+    // animation: sombra_circulo 6s linear infinite forwards;
+    
+  }
+  
+  .mask{
+  
+    width: 85%;
+    height: 85%;
+  
+    text-align: center;
+  
+    animation: pulso 5s linear infinite forwards;
+  
+    mask-image: url("../../../assets/Logos_APP/Logo\ cuadrado.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    // z-index: 10; 
+  }
+  
+  .flb {
+    background-color: white;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Aligner-item {
+    max-width: 50%;
+  }
+  .Aligner-item--top {
+    align-self: flex-start;
+  }
+  .Aligner-item--bottom {
+    align-self: flex-end;
+  }
+  #custom-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+  }
+  
+  .logo {
+    background-color: var(--corporativo__naranja);
+    -webkit-mask: url(../../../assets/Logos_APP/testLogo.svg) no-repeat center;
+    mask: url(../../../assets/Logos_APP/testLogo.svg) no-repeat center;
+    z-index: 1000;
+  }
+  
+  // @keyframes sombra_circulo{
+  //   0% {
+  //     box-shadow: 0 0px 12px 5px rgba($color: #3490b0, $alpha: 1.0), 0 0px 10px 5px rgba($color: #3490b0, $alpha: 0.12);
+  //   }
+  //   33% {
+  //     box-shadow: 0 0px 12px 5px rgba($color: #b6bc00, $alpha: 1.0), 0 0px 10px 5px rgba($color: #b6bc00, $alpha: 0.12);
+  //   }
+  //   66%{
+  //     box-shadow: 0 0px 12px 5px rgba($color: #ee712a, $alpha: 1.0), 0 0px 10px 5px rgba($color: #ee712a, $alpha: 0.12);
+  //   }
+  //   100%{
+  //     box-shadow: 0 0px 12px 5px rgba($color: #3490b0, $alpha: 1.0), 0 0px 10px 5px rgba($color: #3490b0, $alpha: 0.12);
+  //   }
+  // }
+  
+  @keyframes pulso{
+    0% {
+      background-color: var(--corporativo__azul);
+    }
+    33% {
+      background-color: var(--corporativo__verde);
+    }
+    66%{
+      background-color: var(--corporativo__naranja);
+    }
+    100%{
+      background-color: var(--corporativo__azul);
+    }
+  }
