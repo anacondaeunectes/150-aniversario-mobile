@@ -12,8 +12,7 @@
     <div *ngFor="let item of historia.medios">
        
     <ion-img src="{{item.url}}" style="height: 100%; width: 100%;"  tappable
-      (click)="openPreview(item.url)"  ></ion-img>
-    <!--*ngIf="item.tipo==cambiado2"-->
+      (click)="openPreview(item.url)"></ion-img>
     <ion-card-header class="animate__animated animate__backInRight">
      
       <ion-card-title>{{historia.titulo}}</ion-card-title>
