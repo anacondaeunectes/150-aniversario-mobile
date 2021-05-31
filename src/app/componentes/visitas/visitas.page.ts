@@ -5,6 +5,7 @@ import { VideoYModalPage } from 'src/app/componentes/video-y-modal/video-y-modal
 import { medio } from 'src/app/modelos/medio';
 import { visita } from "../../modelos/visita";
 import { ApiService } from "../../servicios/api.service";
+import { ImageModalPage } from '../image-modal/image-modal.page';
 
 @Component({
   selector: 'app-visitas',
@@ -68,6 +69,20 @@ export class VisitasPage implements OnInit {
 
   ConseguirDatos(){
     this.servicio.getVisitas().then(data => {data.forEach(x => x.truncating=true); this.Visitas=data})
+  }
+
+  async openPreview(visita:visita) {
+    let img
+    visita.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)
+    const modal = await this.modalController.create({
+      component: ImageModalPage,
+      cssClass: 'transparent-modal',
+      componentProps: {
+        img
+
+      }
+    });
+    modal.present();
   }
 
 

@@ -11,8 +11,8 @@
 
 
   <ion-card *ngFor="let saludo of saludos">
-    <ion-img src={{findUrl(saludo)}} style="height: 100%; width: 100%;" class="animate__animated animate__fadeIn" tappable
-      (click)="openPreview(saludo.img)"></ion-img>
+    <ion-img src={{findUrl(saludo)}} style="height: 100%; width: 100%; border: 7px solid rgb(255, 255, 255); border-radius: 3px;" class="animate__animated animate__fadeIn" tappable
+      (click)="openPreview(saludo)"></ion-img>
     <ion-card-header class="animate__animated animate__backInRight">
       <ion-card-subtitle>{{saludo.descripcion}}</ion-card-subtitle>
       <ion-card-title>{{saludo.titulo}}</ion-card-title> 

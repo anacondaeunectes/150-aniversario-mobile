@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ImageModalPage } from 'src/app/componentes/image-modal/image-modal.page';
 import { VideoYModalPage } from 'src/app/componentes/video-y-modal/video-y-modal.page';
 import { medio } from 'src/app/modelos/medio';
 import { Acto } from "../../../../modelos/acto";
@@ -67,6 +68,20 @@ export class Tab3Page implements OnInit {
 
   ConseguirDatos(){
     this.servicio.getActos3().then(data => {data.forEach(x => x.truncating=true); this.Actos=data}).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
+  }
+
+  async openPreview(acto:Acto) {
+    let img
+    acto.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)
+    const modal = await this.modalController.create({
+      component: ImageModalPage,
+      cssClass: 'transparent-modal',
+      componentProps: {
+        img
+
+      }
+    });
+    modal.present();
   }
 
   public limit: number = 1;

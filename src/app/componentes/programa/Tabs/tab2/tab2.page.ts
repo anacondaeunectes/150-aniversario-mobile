@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ImageModalPage } from 'src/app/componentes/image-modal/image-modal.page';
 import { VideoYModalPage } from 'src/app/componentes/video-y-modal/video-y-modal.page';
 import { Acto } from "../../../../modelos/acto";
 import { ApiService } from "../../../../servicios/api.service";
@@ -63,6 +64,19 @@ export class Tab2Page implements OnInit {
     return actos["medios"].find(x => x.tipo == "image/jpg").url
   }
 
+  async openPreview(acto:Acto) {
+    let img
+    acto.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)
+    const modal = await this.modalController.create({
+      component: ImageModalPage,
+      cssClass: 'transparent-modal',
+      componentProps: {
+        img
+
+      }
+    });
+    modal.present();
+  }
   public limit: number = 1;
 
 }

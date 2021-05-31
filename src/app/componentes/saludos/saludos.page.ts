@@ -33,7 +33,9 @@ export class SaludosPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
-  async openPreview(img) {
+  async openPreview(saludo:Saludo) {
+    let img
+    saludo.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)
     const modal = await this.modalController.create({
       component: ImageModalPage,
       cssClass: 'transparent-modal',
