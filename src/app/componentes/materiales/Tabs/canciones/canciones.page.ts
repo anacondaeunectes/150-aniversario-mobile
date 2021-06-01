@@ -36,6 +36,8 @@ progress=0;
     }
     this.player = new Howl({
       src:[track.url],
+      html5:true,
+      
       
       onplay:()=>{
         console.log("on play")

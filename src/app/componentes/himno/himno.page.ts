@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 import { ApiService } from "../../servicios/api.service";
 import { himno } from "../../modelos/himno";
 import { IonRange, ModalController } from '@ionic/angular';
@@ -43,9 +43,10 @@ export class HimnoPage implements OnInit {
     this.player = new Howl({
       
       src:[url],
-      Html5: true,
+      html5:true,
       
       onplay:()=>{
+        
         console.log("on play")
         this.activeTrack=himno;
         this.isPlaying=true;
