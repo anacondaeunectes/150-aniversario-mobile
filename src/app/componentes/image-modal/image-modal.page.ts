@@ -7,6 +7,9 @@ import { IonSlides, ModalController } from '@ionic/angular';
   styleUrls: ['./image-modal.page.scss'],
 })
 export class ImageModalPage implements OnInit {
+  /**
+   * Nos permite acceder a los métodos de un componente que existe en el HTML
+   */
   @ViewChild(IonSlides) slides: IonSlides;
  
   img;
@@ -23,13 +26,19 @@ export class ImageModalPage implements OnInit {
   ionViewDidEnter(){
     this.slides.update();
   }
+  /**
+   * Permite hacer zoom en las imagenes
+   * @param zoomIn 
+   */
   async zoom(zoomIn: boolean) {
     const slider = await this.slides.getSwiper();
     const zoom = slider.zoom;
     zoomIn ? zoom.in() : zoom.out();
     
   }
- 
+  /**
+   * Cierra el modal
+   */
   close() {
     this.modalController.dismiss();
   }

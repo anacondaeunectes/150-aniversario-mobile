@@ -22,9 +22,16 @@ export class HistoriaPage implements OnInit {
   ngOnInit() {
     this.servicio.getHistoria().then(data => console.log(this.Historia=data)).catch(error => console.log("hola", error))
   }
+  /**
+   * Usa el componente router para navegar al menú principal
+   */
   atras(){
     this.router.navigateByUrl('home');
   }
+  /**
+     * Abre una imagen en un modal creado a parte
+     * @param himno parámetro de donde se va a buscar la url de la imagen
+     */
   async openPreview(img) {
     const modal = await this.modalController.create({
       component: ImageModalPage,
@@ -36,6 +43,10 @@ export class HistoriaPage implements OnInit {
     });
     modal.present();
   }
+  /**
+     * Abre un video en un modal creado a parte
+     * @param himno parámetro de donde se va a buscar la url del video
+     */
   async openVideo(video) {
     const modal = await this.modalController.create({
       component: VideoYModalPage,

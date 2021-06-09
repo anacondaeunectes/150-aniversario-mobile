@@ -24,11 +24,17 @@ isPlaying=false;
 progress=0;
 @ViewChild('range',{static:false}) range: IonRange
   constructor(public router:Router,private servicio:ApiService) { }
-
+  /**
+   * Usa el componente router para navegar al menú principal
+   */
   atras(){
     this.router.navigateByUrl('home'); 
     this.player.stop();
   }
+  /**
+   * Inicia la canción
+   * @param himno parámetro de donde se va a buscar la url de la canción
+   */
   start(track:Track){
     
     if(this.player){
@@ -41,8 +47,17 @@ progress=0;
       
       onplay:()=>{
         console.log("on play")
+        /**
+         * Se guarda la canción como la canción activa
+         */
         this.activeTrack=track;
+        /**
+         * booleano a true para marcar que una canción está sonando en el momento
+         */
         this.isPlaying=true;
+         /**
+         * Actualiza la barra de reproducción 
+         */
         this.updateProgress();
       },
       onend:()=>{
@@ -52,6 +67,10 @@ progress=0;
     console.log(track.url)
     this.player.play();
   }
+  /**
+   * Pausa o reanuda la canción 
+   * @param pause booleano que cambia según una canción estaba sonando o ya estaba parada
+   */
   togglePlayer(pause){
     this.isPlaying=!pause;
     if(pause){
@@ -61,6 +80,9 @@ progress=0;
     }
 
   }
+  /**
+   * Busca la siguiente canción para reproducir
+   */
   next(){
     let index =  this.playlist.indexOf(this.activeTrack);
     if(index != this.playlist.length-1){
@@ -70,6 +92,9 @@ progress=0;
       this.start(this.playlist[0]);
     }
   }
+  /**
+   * Busca la anterior canción para reproducir
+   */
   prev(){
     let index =  this.playlist.indexOf(this.activeTrack);
     if(index > 0){
@@ -79,12 +104,18 @@ progress=0;
       this.start(this.playlist[this.playlist.length -1]);
     }
   }
+  /**
+     * Si el usuario modifica la barra de proceso se actualiza también el audio que se está reproduciendo
+     */
   seek(){
     let newValue = +this.range.value;
     let duration = this.player.duration();
     this.player.seek(duration * (newValue/100));
 
   }
+  /**
+   * Actualiza el progreso de la barra de reproducción
+   */
   updateProgress(){
     let seek = this.player.seek();
     this.progress = (seek/this.player.duration()) *100 || 0;
@@ -92,9 +123,11 @@ progress=0;
       this.updateProgress();
     },100)
     }
-  
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ngOnInit() {
-    this.servicio.getMaterialCanciones().then(data => this.playlist=data)
+    this.servicio.getMaterialCanciones().then(data =>console.log( this.playlist=data))
   }
 
 }

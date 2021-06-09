@@ -19,16 +19,11 @@ export class ImagenesPage implements OnInit {
   }
 
   imageList : material[] ;
-  //nextPage='https://picsum.photos/v2/list?page=1';
-
-  /*loadImages(){
-    this.http.get<any[]>(this.nextPage, {observe:'response'}).subscribe(res =>{
-      console.log('res:',res);
-      this.nextPage=this.parse_link_header(res.headers.get('Link'))['next']
-      this.imageList = this.imageList.length ==0 ? res.body : [...this.imageList,...res.body];
-    })
-  }*/
-
+ 
+  /**
+     * Abre una imagen en un modal creado a parte
+     * @param img la url de la imagen
+     */
   async openPreview(img) {
     const modal = await this.modalController.create({
       component: ImageModalPage,
@@ -41,36 +36,9 @@ export class ImagenesPage implements OnInit {
     modal.present();
   }
 
-  /*parse_link_header(header) {
-    if (header.length == 0) {
-      return ;
-    }
-
-    let parts = header.split(',');
-    var links = {};
-    parts.forEach( p => {
-      let section = p.split(';');
-      var url = section[0].replace(/<(.*)>/, '$1').trim();
-      var name = section[1].replace(/rel="(.*)"/, '$1').trim();
-      links[name] = url;
-
-    });
-    return links;
-  }  
-  imagenes = [
-    {
-      img:"./../../../../../assets/images/background.jpg"
-    },
-    {
-      img:"https://es.rankiapro.com/wp-content/uploads/2019/08/fondo-tecnologico-preferido-selectores.jpg"
-    },
-    {
-      img:"https://img.freepik.com/vector-gratis/fondo-acuarela-cielo-estrellado-ensueno_79603-883.jpg?size=626&ext=jpg"
-    },
-    {
-      img:"https://amymhaddad.s3.amazonaws.com/morocco-blue.png"
-    }
-  ]*/
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ngOnInit() {
     this.servicio.getMaterialImagenes().then(data => console.log(this.imageList=data)).catch(error => console.log("hola", error))
     

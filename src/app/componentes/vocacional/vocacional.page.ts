@@ -20,6 +20,7 @@ export class VocacionalPage implements OnInit {
       ubicacion: "Colegio Salesianas María Auxiliadora",
       medios: [
        {
+         nombre:"",
          tipo: "image/jpg",
          url:"https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
        }

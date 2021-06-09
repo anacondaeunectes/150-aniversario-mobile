@@ -15,7 +15,7 @@ import {Router} from '@angular/router';
 })
 export class HimnoPage implements OnInit {
 
-  activeTrack:himno =null;
+  activeTrack:himno =null; 
   player:Howl = null;
   isPlaying=false;
   progress=0; 
@@ -23,16 +23,25 @@ export class HimnoPage implements OnInit {
   @ViewChild('range',{static:false}) range: IonRange
   constructor(private servicio:ApiService,private modalController: ModalController, public router:Router) { }
 
-
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ngOnInit() {
     this.servicio.getHimnos().then(data => console.log(this.playlist=data)).catch(error => console.log("hola", error))
   }
 
+  /**
+   * Usa el componente router para navegar al menú principal
+   */
   atras(){
     this.player.stop();
     this.router.navigateByUrl('home');
   }
 
+  /**
+   * Inicia la canción
+   * @param himno parámetro de donde se va a buscar la url de la canción
+   */
   start(himno:himno){
     let url
     himno.medios.filter(x => x.tipo == "audio/mp3").forEach(x => url=x.url)
@@ -48,8 +57,17 @@ export class HimnoPage implements OnInit {
       onplay:()=>{
         
         console.log("on play")
+        /**
+         * Se guarda la canción como la canción activa
+         */
         this.activeTrack=himno;
+        /**
+         * booleano a true para marcar que una canción está sonando en el momento
+         */
         this.isPlaying=true;
+        /**
+         * Actualiza la barra de reproducción 
+         */
         this.updateProgress();
       },
       onend:()=>{
@@ -61,6 +79,10 @@ export class HimnoPage implements OnInit {
     console.log(this.isPlaying)
     this.player.play();
   }
+  /**
+   * Pausa o reanuda la canción 
+   * @param pause booleano que cambia según una canción estaba sonando o ya estaba parada
+   */
   togglePlayer(pause){
     this.isPlaying=!pause;
     if(pause){
@@ -70,6 +92,9 @@ export class HimnoPage implements OnInit {
     }
 
   }
+  /**
+   * Actualiza el progreso de la barra de reproducción
+   */
   updateProgress(){
     let seek = this.player.seek();
     this.progress = (seek/this.player.duration()) *100 || 0;
@@ -78,10 +103,20 @@ export class HimnoPage implements OnInit {
     },100)
     }
 
+    /**
+     * Abre un video en un modal creado a parte
+     * @param himno parámetro de donde se va a buscar la url del video
+     */
     async openVideo(himno:himno) {
       let video
+      /**
+       * filtramos el himno buscandoo la url del vídeo
+       */
       himno.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
       console.log(video)
+      /**
+       * Creamos el  modal y le pasamos la url del vídeo
+       */
       const modal = await this.modalController.create({
         component: VideoYModalPage,
         cssClass: 'transparent-modal',
@@ -92,14 +127,26 @@ export class HimnoPage implements OnInit {
       });
       modal.present();
     }
-
+    /**
+     * Valida si existe una url de tipo audio/mp3 
+     * @param himno 
+     * @returns url de un audio
+     */
     validateAudio(himno:himno){
       return himno["medios"].find(x => x.tipo == "audio/mp3")
     }
+    /**
+     * Valida si existe una url de tipo video/mp4
+     * @param himno 
+     * @returns url de un video
+     */
     validateVideo(himno:himno){
       return himno["medios"].find(x => x.tipo == "video/mp4")
     }
 
+    /**
+     * Si el usuario modifica la barra de proceso se actualiza también el audio que se está reproduciendo
+     */
     seek(){
       let newValue = +this.range.value;
       let duration = this.player.duration();

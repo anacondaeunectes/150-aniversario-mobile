@@ -13,10 +13,15 @@ export class AgradecimientosPage implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Usa el componente router para navegar al menú principal
+   */
   atras(){
     this.router.navigateByUrl('home');
   }
-
+  /**
+   * Lista con las personas a agradecer 
+   */
   public agradecimientos_nervion = [{
     name: 'Daniel García Villalba',
     dispositivo: 'Aplicación móvil',

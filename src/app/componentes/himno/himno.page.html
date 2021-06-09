@@ -40,7 +40,7 @@
   <ion-toolbar style="position: static; margin-bottom: 50px; background-color: black;">
     <ion-row>
       <ion-col size="12" class="ion-text-center" style="color: white;" >
-        {{activeTrack.name}}
+        {{activeTrack.titulo}}
       </ion-col>
       <ion-col size="12">
         <ion-range #range [(ngModel)]="progress" max="100" color="success" (touchend)="seek()" (mouseup)="seek()"></ion-range>
