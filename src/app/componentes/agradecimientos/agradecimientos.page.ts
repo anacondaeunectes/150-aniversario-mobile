@@ -56,7 +56,7 @@ export class AgradecimientosPage implements OnInit {
   {
     name: 'Francisco José Caro Carazo',
     dispositivo: 'Panel de administración',
-    img: './../../assets/images/saludos/madreyvonne.jpg',
+    img: './../../assets/images/agradecimientos/curro.jpg',
     truncating : true
   },
   {
@@ -86,6 +86,21 @@ export class AgradecimientosPage implements OnInit {
     img: './../../assets/images/agradecimientos/diegotutor.png',
     truncating : true
   }
+];
+
+public agradecimientos_otros = [
+  {
+  name: 'María Fernanda Bastidas Zapata',
+  dispositivo: 'Diseñadora Logotipo',
+  img: './../../assets/images/saludos/madreyvonne.jpg',
+  truncating : true
+},
+{
+  name: 'Juan Javier Bernal García',
+  dispositivo: 'Compositor del himno',
+  img: './../../assets/images/saludos/madreyvonne.jpg',
+  truncating : true
+}
 ];
 
 }
