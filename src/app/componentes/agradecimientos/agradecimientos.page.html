@@ -44,6 +44,25 @@
         </ion-item>
       </ion-list>
 
+      <h3 class="animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="../../assets/images/headSalesianas.png" />
+      </h3>	
+      
+        <ion-list>
+          <ion-item *ngFor="let agradecimientos_otros of agradecimientos_otros" >
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="{{agradecimientos_otros.img}}">
+              </ion-avatar>
+              <ion-label>
+                <h2><b>{{agradecimientos_otros.name}}</b></h2>
+                <p>{{agradecimientos_otros.dispositivo}}</p>
+              </ion-label>
+            </ion-item>
+      
+          </ion-item>
+        </ion-list>
+
   </div>
 
 <!-- BOTÓN VOLVER INICIO -->
