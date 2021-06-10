@@ -10,8 +10,8 @@
 <ion-content [fullscreen]="true">
 
 
-  <ion-card *ngFor="let acto of Actos">
-
+  <ion-card *ngFor="let acto of Actos" >
+    <div  *ngIf="acto.enUso=='1'">
     
     <ion-img src={{findUrl(acto)}} style="height: 100%; width: 100%; border: 7px solid rgb(255, 255, 255); border-radius: 3px;" class="animate__animated animate__fadeIn" tappable
     (click)="openPreview(acto)" *ngIf="validateImagen(acto)"></ion-img>
@@ -39,7 +39,7 @@
       
      
     </ion-card-content>
- 
+  </div>
   </ion-card>
 
 </ion-content >

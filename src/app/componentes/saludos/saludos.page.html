@@ -11,6 +11,7 @@
 
 
   <ion-card *ngFor="let saludo of saludos">
+    <div  *ngIf="saludo.enUso=='1'">
     <ion-img src={{findUrl(saludo)}} style="height: 100%; width: 100%; border: 7px solid rgb(255, 255, 255); border-radius: 3px;" class="animate__animated animate__fadeIn" tappable
       (click)="openPreview(saludo)"></ion-img>
     <ion-card-header class="animate__animated animate__backInRight">
@@ -31,6 +32,7 @@
       <ion-button style="text-transform:none" size="small" (click)="saludo.truncating = true"
         *ngIf="saludo.truncating === false">Ocultar</ion-button>
     </ion-card-content>
+  </div>
   </ion-card>
 
 </ion-content>

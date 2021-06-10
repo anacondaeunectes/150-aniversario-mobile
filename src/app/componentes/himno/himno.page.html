@@ -11,6 +11,7 @@
 
 
   <ion-card *ngFor="let himno of playlist">
+    <div  *ngIf="himno.enUso=='1'">
     
     
     <ion-card-header class="animate__animated animate__backInRight">
@@ -31,7 +32,7 @@
       
      
     </ion-card-content>
- 
+  </div>
   </ion-card>
 
 </ion-content >

@@ -14,7 +14,7 @@ export class VocacionalPage implements OnInit {
   vocacionalArray:Vocacional[] = [
     {
       descripcion: "Ven a celebrar con nosotros el 150 aniversario de la creación de la inspectoría",
-      enUso:"",
+      enUso:"1",
       fecha: null,
       titulo: "Fiesta 150 aniversario",
       ubicacion: "Colegio Salesianas María Auxiliadora",
