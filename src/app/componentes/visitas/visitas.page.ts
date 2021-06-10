@@ -39,9 +39,19 @@ export class VisitasPage implements OnInit {
     modal.present();
   }
 
+  /**
+     * Valida si existe una url de tipo video/mp4 
+     * @param acto 
+     * @returns url de un video
+     */
   validateVideo(visitas:visita){
     return visitas["medios"].find(x => x.tipo == "video/mp4")
   }
+   /**
+     * Valida si existe una url de tipo image/jpg 
+     * @param visitas 
+     * @returns url de un audio
+     */
   validateImagen(visitas:visita){
     
     return visitas["medios"].find((x => x.tipo == "image/jpg"))
@@ -49,6 +59,11 @@ export class VisitasPage implements OnInit {
 
   }
 
+  /**
+   * Busca la url de la imagen a mostrar
+   * @param visitas 
+   * @returns 
+   */
   findUrl(visitas:visita){
     let url
     
@@ -57,6 +72,11 @@ export class VisitasPage implements OnInit {
 
   
 
+  /**
+   * Transforma la fecha de datetime a date
+   * @param fecha 
+   * @returns 
+   */
   validateFecha(fecha){
     
     fecha=fecha*1000
@@ -67,10 +87,17 @@ export class VisitasPage implements OnInit {
     
   }
 
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ConseguirDatos(){
     this.servicio.getVisitas().then(data => {data.forEach(x => x.truncating=true); this.Visitas=data})
   }
 
+  /**
+     * Abre una imagen en un modal creado a parte
+     * @param visita parámetro de donde se va a buscar la url de la imagen
+     */
   async openPreview(visita:visita) {
     let img
     visita.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)

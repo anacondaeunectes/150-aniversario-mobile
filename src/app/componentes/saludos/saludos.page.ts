@@ -29,10 +29,17 @@ export class SaludosPage implements OnInit {
     this.servicioApi.getSaludos().then(data => {data.forEach(x => x.truncating=true); this.saludos=data})
   }
 
+  /**
+   * Usa el componente router para navegar al menú principal
+   */
   atras(){
     this.router.navigateByUrl('home');
   }
 
+  /**
+     * Abre una imagen en un modal creado a parte
+     * @param saludo parámetro de donde se va a buscar la url de la imagen
+     */
   async openPreview(saludo:Saludo) {
     let img
     saludo.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)
@@ -48,7 +55,7 @@ export class SaludosPage implements OnInit {
   }
  
 
-  startVideo(){
+  /*startVideo(){
     let options:StreamingVideoOptions ={
       successCallback: () => { console.log('Video played') },
      errorCallback: (e) => { console.log('Error streaming') },
@@ -57,14 +64,23 @@ export class SaludosPage implements OnInit {
       
     }
     this.streamingMedia.playVideo("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4", options);
-  }
+  }*/
 
+  /**
+   * Busca la url de la imagen a mostrar
+   * @param saludo 
+   * @returns 
+   */
   findUrl(saludo:Saludo){
     let url
     
     return saludo["medios"].find(x => x.tipo == "image/jpg").url
   }
 
+   /**
+     * Abre un video en un modal creado a parte
+     * @param actos parámetro de donde se va a buscar la url del video
+     */
   async openVideo(saludo:Saludo) {
     let video
     saludo.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
@@ -80,9 +96,19 @@ export class SaludosPage implements OnInit {
     modal.present();
   }
 
+  /**
+     * Valida si existe una url de tipo video/mp4 
+     * @param saludo 
+     * @returns url de un video
+     */
   validateVideo(saludo:Saludo){
     return saludo["medios"].find(x => x.tipo == "video/mp4")
   }
+   /**
+     * Valida si existe una url de tipo image/jpg 
+     * @param saludo 
+     * @returns url de un audio
+     */
   validateImagen(saludo:Saludo){
     
     return saludo["medios"].find((x => x.tipo == "image/jpg"))

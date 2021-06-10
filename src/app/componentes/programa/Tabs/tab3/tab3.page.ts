@@ -23,6 +23,10 @@ export class Tab3Page implements OnInit {
     //this.Actos.forEach(x => {this.validateFecha(x.fecha)} )
   
   }
+  /**
+     * Abre un video en un modal creado a parte
+     * @param actos parámetro de donde se va a buscar la url del video
+     */
   async openVideo(actos:Acto) {
     let video
     actos.medios.filter(x => x.tipo == "video/mp4").forEach(x =>video = x.url)
@@ -38,9 +42,19 @@ export class Tab3Page implements OnInit {
     modal.present();
   }
 
+  /**
+     * Valida si existe una url de tipo video/mp4 
+     * @param actos
+     * @returns url de un video
+     */
   validateVideo(actos:Acto){
     return actos["medios"].find(x => x.tipo == "video/mp4")
   }
+  /**
+     * Valida si existe una url de tipo image/jpg 
+     * @param actos
+     * @returns url de un audio
+     */
   validateImagen(actos:Acto){
     
     return actos["medios"].find((x => x.tipo == "image/jpg"))
@@ -48,6 +62,11 @@ export class Tab3Page implements OnInit {
 
   }
 
+  /**
+   * Busca la url de la imagen a mostrar
+   * @param actos 
+   * @returns 
+   */
   findUrl(actos:Acto){
     let url
     
@@ -56,6 +75,11 @@ export class Tab3Page implements OnInit {
 
   
 
+  /**
+   * Transforma la fecha de datetime a date
+   * @param fecha 
+   * @returns 
+   */
   validateFecha(fecha){
     
     fecha=fecha*1000
@@ -66,10 +90,17 @@ export class Tab3Page implements OnInit {
     
   }
 
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ConseguirDatos(){
     this.servicio.getActos3().then(data => {data.forEach(x => x.truncating=true); this.Actos=data}).then(x => this.Actos.forEach(x=> x.fecha=( this.validateFecha(x.fecha))))
   }
 
+   /**
+     * Abre una imagen en un modal creado a parte
+     * @param acto parámetro de donde se va a buscar la url de la imagen
+     */
   async openPreview(acto:Acto) {
     let img
     acto.medios.filter(x => x.tipo == "image/jpg").forEach(x =>img = x.url)

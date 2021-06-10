@@ -19,6 +19,9 @@ export class HistoriaPage implements OnInit {
   id:number
   titulo:String
 
+  /**
+   * rellena el array con los datos traidos del back al iniciar la página
+   */
   ngOnInit() {
     this.servicio.getHistoria().then(data => console.log(this.Historia=data)).catch(error => console.log("hola", error))
   }
@@ -30,7 +33,7 @@ export class HistoriaPage implements OnInit {
   }
   /**
      * Abre una imagen en un modal creado a parte
-     * @param himno parámetro de donde se va a buscar la url de la imagen
+     * @param historia parámetro de donde se va a buscar la url de la imagen
      */
   async openPreview(img) {
     const modal = await this.modalController.create({

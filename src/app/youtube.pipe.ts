@@ -9,13 +9,10 @@ export class YoutubePipe implements PipeTransform {
     
   }
 
- /* transform(value) : SafeResourceUrl {
-    console.log(value);
-    
-    
-    return this.dom.sanitize(SecurityContext.RESOURCE_URL,this.dom.bypassSecurityTrustResourceUrl(value))
-    
-  }
+ /**
+  * Transforma la url pasada a una segura 
+  * @param value 
+  * @returns 
   */
   transform(value){
     console.log(value);

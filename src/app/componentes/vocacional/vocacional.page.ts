@@ -36,16 +36,31 @@ export class VocacionalPage implements OnInit {
     return item.medios[0];
   }
 
+   /**
+     * Valida si existe una url de tipo image/jpg 
+     * @param  multimedia
+     * @returns url de un audio
+     */
   validateImg(multimedia:medio){
     return multimedia.tipo == "image/jpg";
 
   }
 
+  /**
+     * Valida si existe una url de tipo video/mp4 
+     * @param multimedia
+     * @returns url de un video
+     */
   validateVideo(multimedia:medio){
     return multimedia.tipo == "video/mp4";
 
   }
 
+  /**
+     * Valida si existe una url de tipo image/jpg 
+     * @param item 
+     * @returns url de un audio
+     */
   findUrl(item:Vocacional){
     let url
     

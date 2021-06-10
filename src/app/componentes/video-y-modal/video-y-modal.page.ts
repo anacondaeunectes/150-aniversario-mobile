@@ -10,6 +10,9 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 })
 export class VideoYModalPage implements OnInit {
 
+  /**
+   * Nos permite acceder a los métodos de un componente que existe en el HTML
+   */
   @ViewChild(IonSlides) slides: IonSlides;
  
   video:SafeResourceUrl;
@@ -29,6 +32,9 @@ export class VideoYModalPage implements OnInit {
   
   
  
+  /**
+   * Cierra el modal
+   */
   close() {
     this.modalController.dismiss();
   }
