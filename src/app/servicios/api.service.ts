@@ -92,7 +92,9 @@ export class ApiService {
   }
 
 
-
+  async getVocacional(){
+    return (await this.http.get<any[]>(this.baseUrl + "pjenvironments/listEverything.php").toPromise());
+  }
 
   
 }

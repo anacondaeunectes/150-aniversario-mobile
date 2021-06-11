@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vocacional } from "../../modelos/vocacional";
 import { medio } from "../../modelos/medio";
+import { ApiService } from 'src/app/servicios/api.service';
 
 @Component({
   selector: 'app-vocacional',
@@ -9,30 +10,22 @@ import { medio } from "../../modelos/medio";
 })
 export class VocacionalPage implements OnInit {
 
-  constructor() { }
+  vocacional;
 
-  vocacionalArray:Vocacional[] = [
-    {
-      descripcion: "Ven a celebrar con nosotros el 150 aniversario de la creación de la inspectoría",
-      enUso:"1",
-      fecha: null,
-      titulo: "Fiesta 150 aniversario",
-      ubicacion: "Colegio Salesianas María Auxiliadora",
-      medios: [
-       {
-         nombre:"",
-         tipo: "image/jpg",
-         url:"https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
-       }
-     ]
-    }
-  ]
+  constructor(private servicioApi: ApiService) { }
+
+  vocacionalArray:Vocacional[];
 
   ngOnInit() {
     // console.log(this.validateImg(this.vocacionalArray[0]))
+    this.servicioApi.getVocacional().then(data => {this.vocacionalArray=data})
+    setTimeout(x => {
+      console.log(this.vocacionalArray)
+    },5000)
   }
 
   getPrimerMedio(item:Vocacional):medio{
+
     return item.medios[0];
   }
 
@@ -42,6 +35,11 @@ export class VocacionalPage implements OnInit {
      * @returns url de un audio
      */
   validateImg(multimedia:medio){
+
+    if(!multimedia){
+      return false;
+    }
+
     return multimedia.tipo == "image/jpg";
 
   }
